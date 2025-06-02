@@ -117,7 +117,7 @@ export default function Servicios() {
               Escríbeme
             </a>
             <a
-              href="https://wa.me/56XXXXXXXXX"
+              href="https://wa.me/56945955335"
               target="_blank"
               className="flex-1 text-center border border-purple-600 text-purple-600 py-2 rounded-md hover:bg-purple-50 dark:hover:bg-purple-900/10"
             >
