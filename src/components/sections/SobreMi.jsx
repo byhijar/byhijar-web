@@ -1,11 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const fotos = [
-  "/img/jose1.jpg",
-  "/img/jose2.jpg",
-  "/img/jose3.jpg"
-];
+const fotos = ["/img/jose1.jpg", "/img/jose2.jpg", "/img/jose3.jpg"];
 
 export default function SobreMi() {
   const [index, setIndex] = useState(0);
@@ -18,7 +15,7 @@ export default function SobreMi() {
   }, []);
 
   return (
-    <section className="bg-white dark:bg-gray-900 py-16 px-4 text-gray-800 dark:text-gray-100" id="sobre-mi">
+    <section id="sobre-mi" className="bg-white dark:bg-gray-900 py-16 px-4 text-gray-800 dark:text-gray-100">
       <div className="max-w-4xl mx-auto text-center space-y-6">
         <motion.h2
           className="text-3xl md:text-4xl font-bold"
@@ -33,21 +30,19 @@ export default function SobreMi() {
           key={index}
           src={fotos[index]}
           alt="José Hijar"
-          className="rounded-xl w-40 h-40 mx-auto mt-8 object-cover"
+          className="rounded-xl w-40 h-40 mx-auto mt-8 object-cover border-4 border-purple-500 dark:border-purple-400"
           initial={{ opacity: 0.4 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         />
 
         <motion.p
-          className="text-lg md:text-xl leading-relaxed"
+          className="text-lg md:text-xl leading-relaxed font-medium"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          Soy José, desarrollador web independiente con una meta clara: lo que quiero, lo consigo.
-          Me gusta resolver problemas reales, conectar con personas y dejar que el trabajo hable por sí solo.
-          En ByHijar Web Solutions creo experiencias digitales con actitud, empatía y foco total en el cliente.
+          Hola, soy José Hijar, desarrollador web independiente y creador de <strong>ByHijar Web Solutions</strong>. Ayudo a emprendedores y marcas a tener una presencia digital sólida, moderna y funcional.
         </motion.p>
 
         <motion.p
@@ -56,8 +51,7 @@ export default function SobreMi() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Empecé este camino porque entendí que el mundo necesita menos excusas y más soluciones. 
-          Ayudar a mi familia, a emprendedores, y a marcas que quieren crecer, es lo que me impulsa.
+          Mi camino no ha sido fácil: pasé por dos carreras, trabajos muy distintos y harto ensayo y error. Pero todo ese recorrido me enseñó a ver el desarrollo web no solo como código, sino como una herramienta real para mejorar negocios y conectar con personas.
         </motion.p>
 
         <motion.p
@@ -66,8 +60,7 @@ export default function SobreMi() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          Lo que me diferencia es simple: escucho, entiendo y actúo rápido. Profesionalismo sin vueltas. 
-          Me gusta trabajar con quienes sueñan en grande, sin importar si recién comienzan o ya tienen trayectoria.
+          Hoy combino lo técnico con lo humano: escucho lo que necesitas, lo transformo en soluciones claras y me encargo de que tu web funcione bien, se vea pro y esté lista para crecer contigo.
         </motion.p>
 
         <motion.blockquote
@@ -85,7 +78,7 @@ export default function SobreMi() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          PD: Todavía tengo un proyecto de inventario pendiente que algún día voy a lanzar como se debe.
+          PD: También estoy desarrollando un sistema de inventario escolar que nació de mi propio trabajo en colegios. Pronto va a dar que hablar 🚀
         </motion.p>
       </div>
     </section>

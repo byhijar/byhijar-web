@@ -1,35 +1,52 @@
-import { useEffect } from 'react';
-import Hero from './components/Hero';
-import Servicios from './components/Servicios';
-import CasosExito from './components/CasosExito';
-import SobreMi from './components/SobreMi';
-import ContactoForm from './components/ContactoForm';
-import WhatsAppButton from './components/WhatsAppButton';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import SEO from './components/SEO';
-import ToggleTheme from './components/ToggleTheme';
+import { motion } from 'framer-motion';
+import Hero from './components/sections/Hero';
+import SobreMi from './components/sections/SobreMi';
+import Servicios from './components/sections/Servicios';
+import Proyectos from './components/sections/Proyectos';
+import Testimonios from './components/shared/Testimonios';
+import TechStack from './components/shared/TechStack';
+import Blog from './components/shared/Blog';
+import Contacto from './components/sections/Contacto';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import './index.css';
 
 function App() {
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }, []);
-
   return (
-    <main className="scroll-smooth bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
       <Navbar />
-      <div id="inicio" className="pt-16">
-        <SEO />
-        <Hero />
-        <Servicios />
-        <CasosExito />
-        <SobreMi />
-        <ContactoForm />
-        <WhatsAppButton />
-        <ToggleTheme />
-        <Footer />
-      </div>
-    </main>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <section id="inicio" aria-label="Inicio">
+          <Hero />
+        </section>
+        <section id="servicios" aria-label="Servicios">
+          <Servicios />
+        </section>
+        <section id="proyectos" aria-label="Proyectos">
+          <Proyectos />
+        </section>
+        <section id="sobre-mi" aria-label="Sobre mí">
+          <SobreMi />
+        </section>
+        <section id="testimonios" aria-label="Testimonios">
+          <Testimonios />
+        </section> 
+        <section id="tech" aria-label="TechStack">
+          <TechStack />
+        </section>
+        <section id="blog" aria-label="Blog">
+          <Blog />
+        </section>
+        <section id="contacto" aria-label="Contacto">
+          <Contacto />
+        </section>
+      </motion.main>
+      <Footer />
+    </div>
   );
 }
 
