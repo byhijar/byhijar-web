@@ -1,0 +1,2 @@
+# Redirige todo lo que venga desde www.byhijar.cl hacia byhijar.cl
+https://www.byhijar.cl/*  https://byhijar.cl/:splat  301!
