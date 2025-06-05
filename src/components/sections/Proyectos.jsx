@@ -37,7 +37,7 @@ export default function Proyectos() {
               <li>Formulario validado, sin pagos automáticos pero con contacto directo</li>
             </ul>
             <a
-              href="https://dulzuras-nickynicole.netlify.app"
+              href="https://dulzurasnicky.cl"
               target="_blank"
               rel="noreferrer"
               className="mt-5 inline-block text-purple-600 dark:text-purple-400 font-semibold hover:underline"
