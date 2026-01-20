@@ -1,22 +1,19 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const fotos = ["/img/jose1.jpg", "/img/jose2.jpg", "/img/jose3.jpg"];
-
 export default function SobreMi() {
-  const [index, setIndex] = useState(0);
+  const [showSecond, setShowSecond] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % fotos.length);
-    }, 3500);
+      setShowSecond((prev) => !prev);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section id="sobre-mi" className="bg-white dark:bg-gray-900 py-16 px-4 text-gray-800 dark:text-gray-100">
-      <div className="max-w-4xl mx-auto text-center space-y-6">
+    <section id="sobre-mi" className="bg-white py-16 px-4 text-gray-800">
+      <div className="max-w-4xl mx-auto text-center space-y-8">
         <motion.h2
           className="text-3xl md:text-4xl font-bold"
           initial={{ opacity: 0, y: -10 }}
@@ -26,60 +23,48 @@ export default function SobreMi() {
           Sobre mí
         </motion.h2>
 
-        <motion.img
-          key={index}
-          src={fotos[index]}
-          alt="José Hijar"
-          className="rounded-xl w-40 h-40 mx-auto mt-8 object-cover border-4 border-purple-500 dark:border-purple-400"
-          initial={{ opacity: 0.4 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        />
+        {/* Imagen con animación sutil de crossfade */}
+        <div className="relative w-32 h-32 mx-auto rounded-full shadow-lg border-2 border-gray-100 overflow-hidden bg-gray-100">
+          <img
+            src="/img/jose1.jpg"
+            alt="José Hijar - Retrato"
+            className="absolute inset-0 w-full h-full object-cover z-10"
+          />
+          <img
+            src="/img/jose2.jpg"
+            alt="José Hijar - Trabajo"
+            className={`absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-1000 ease-in-out ${showSecond ? "opacity-100" : "opacity-0"
+              }`}
+          />
+        </div>
 
-        <motion.p
-          className="text-lg md:text-xl leading-relaxed font-medium"
+        <motion.div
+          className="space-y-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
         >
-          Hola, soy José Hijar, desarrollador web independiente y creador de <strong>ByHijar Web Solutions</strong>. Ayudo a emprendedores y marcas a tener una presencia digital sólida, moderna y funcional.
-        </motion.p>
+          <p className="text-lg md:text-xl leading-relaxed font-medium">
+            Soy José Hijar. Desarrollo soluciones digitales que combinan ingeniería sólida con estrategia de negocio. Mi enfoque es claro: entregar webs que funcionan, cargan rápido y no te dan problemas.
+          </p>
 
-        <motion.p
-          className="text-base md:text-lg text-gray-600 dark:text-gray-300"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          Mi camino no ha sido fácil: pasé por dos carreras, trabajos muy distintos y harto ensayo y error. Pero todo ese recorrido me enseñó a ver el desarrollo web no solo como código, sino como una herramienta real para mejorar negocios y conectar con personas.
-        </motion.p>
+          <p className="text-base md:text-lg text-gray-600">
+            Entiendo lo que busca una empresa hoy: comunicación fluida, cumplimiento de plazos y calidad técnica. No soy una agencia burocrática ni un principiante; soy tu socio tecnológico directo.
+          </p>
 
-        <motion.p
-          className="text-base md:text-lg text-gray-600 dark:text-gray-300"
+          <p className="text-base md:text-lg text-gray-600">
+            Mi promesa de valor es simple: construir activos digitales que ayuden a tu negocio a operar mejor y vender más, ahorrándote dolores de cabeza técnicos para que tú te enfoques en crecer.
+          </p>
+        </motion.div>
+
+        <motion.blockquote
+          className="italic text-brand-red text-lg pt-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          Hoy combino lo técnico con lo humano: escucho lo que necesitas, lo transformo en soluciones claras y me encargo de que tu web funcione bien, se vea pro y esté lista para crecer contigo.
-        </motion.p>
-
-        <motion.blockquote
-          className="italic text-purple-600 dark:text-purple-400 text-lg"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
           “No necesitas una web perfecta. Necesitas una web que funcione y conecte.”
         </motion.blockquote>
-
-        <motion.p
-          className="text-sm text-gray-500 dark:text-gray-400"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          PD: También estoy desarrollando un sistema de inventario escolar que nació de mi propio trabajo en colegios. Pronto va a dar que hablar 🚀
-        </motion.p>
       </div>
     </section>
   );

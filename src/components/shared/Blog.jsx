@@ -44,7 +44,7 @@ export default function Blog() {
           >
             <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
             <p className="text-sm">{post.summary}</p>
-            <span className="mt-4 inline-block text-purple-600 dark:text-purple-400 font-medium">
+            <span className="mt-4 inline-block text-brand-red dark:text-red-400 font-medium">
               Leer más →
             </span>
           </motion.a>

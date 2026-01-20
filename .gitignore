@@ -1,5 +1,12 @@
 node_modules/
 dist/
 .env
+.env.local
+.env.*
 .DS_Store
 .vscode/
+
+# Firebase
+.firebase/
+firebase.json
+.firebaserc

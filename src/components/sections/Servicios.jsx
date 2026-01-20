@@ -1,131 +1,85 @@
-import { useState } from "react";
-import { FaCode, FaPalette, FaRocket, FaTimes } from "react-icons/fa";
-import { Dialog } from "@headlessui/react";
+import { FaCode, FaPalette, FaRocket } from "react-icons/fa";
 
 export default function Servicios() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <section
       id="servicios"
-      className="bg-white dark:bg-gray-950 py-20 px-4 text-gray-800 dark:text-gray-100"
+      className="bg-white py-20 px-4 text-gray-800"
     >
       <h2 className="text-4xl font-bold text-center mb-12">
         Servicios que potencian tu negocio
       </h2>
 
-      <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-        {/* Desarrollo Web */}
-        <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-          <FaCode className="text-3xl mb-4 text-purple-600 dark:text-purple-400" />
-          <h3 className="text-xl font-semibold mb-2">Desarrollo Web</h3>
-          <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-            Creo sitios rápidos, modernos y escalables que se adaptan a tu negocio. 
-            Tu web será tu mejor vendedor, disponible 24/7 y diseñada para convertir.
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        {/* Presencia Web */}
+        <div className="bg-gray-100 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition flex flex-col h-full border border-gray-200">
+          <FaCode className="text-4xl mb-6 text-brand-red" />
+          <h3 className="text-2xl font-bold mb-3">Presencia Web</h3>
+          <p className="text-gray-700 mb-6 flex-grow">
+            Ideal para campañas o profesionales que necesitan visibilidad inmediata y conversión rápida.
           </p>
-          <ul className="text-xs text-gray-600 dark:text-gray-400 list-disc list-inside space-y-1 mb-3">
-            <li>Landing pages persuasivas</li>
-            <li>Webs administrables con panel personalizado</li>
-            <li>Integración de formularios, base de datos y más</li>
-            <li>Desarrollo con React, Firebase o Django</li>
+          <ul className="text-sm text-gray-600 space-y-3 mb-8">
+            <li className="flex items-center gap-2">✓ Landing Page o One Page</li>
+            <li className="flex items-center gap-2">✓ Diseño responsivo y rápido</li>
+            <li className="flex items-center gap-2">✓ Integración con WhatsApp</li>
+            <li className="flex items-center gap-2">✓ Formulario de contacto basico</li>
           </ul>
-          <button
-            onClick={() => setIsOpen(true)}
-            className="text-sm text-purple-600 hover:underline dark:text-purple-400"
-          >
-            Ver precios estimados →
-          </button>
-        </div>
-
-        {/* Diseño Visual y Branding */}
-        <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-          <FaPalette className="text-3xl mb-4 text-purple-600 dark:text-purple-400" />
-          <h3 className="text-xl font-semibold mb-2">Diseño Visual y Branding</h3>
-          <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-            Diseño a medida que representa tu marca. No uso plantillas genéricas, sino identidad visual pensada en tu público.
-          </p>
-          <ul className="text-xs text-gray-600 dark:text-gray-400 list-disc list-inside space-y-1 mb-3">
-            <li>Diseño UX/UI enfocado en experiencia del usuario</li>
-            <li>Paleta de colores, estilo e iconografía a medida</li>
-            <li>Diseño responsive para todos los dispositivos</li>
-            <li>Adaptación de logos y material gráfico</li>
-          </ul>
-          <button
-            onClick={() => setIsOpen(true)}
-            className="text-sm text-purple-600 hover:underline dark:text-purple-400"
-          >
-            Ver precios estimados →
-          </button>
-        </div>
-
-        {/* Acompañamiento */}
-        <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-          <FaRocket className="text-3xl mb-4 text-purple-600 dark:text-purple-400" />
-          <h3 className="text-xl font-semibold mb-2">Lanzamiento y Soporte</h3>
-          <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-            Te acompaño en el proceso completo: desde poner tu sitio en línea hasta mantenerlo actualizado y seguro.
-          </p>
-          <ul className="text-xs text-gray-600 dark:text-gray-400 list-disc list-inside space-y-1 mb-3">
-            <li>Gestión de dominio y hosting</li>
-            <li>Configuración de correos corporativos</li>
-            <li>Monitoreo de rendimiento y soporte técnico</li>
-            <li>Actualizaciones y mejoras según necesidades</li>
-          </ul>
-          <button
-            onClick={() => setIsOpen(true)}
-            className="text-sm text-purple-600 hover:underline dark:text-purple-400"
-          >
-            Ver precios estimados →
-          </button>
-        </div>
-      </div>
-
-      {/* Modal de precios */}
-      <Dialog
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
-        className="fixed inset-0 z-50 flex items-center justify-center px-4 backdrop-blur-sm"
-      >
-        <Dialog.Panel className="max-w-md w-full bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl relative">
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-white"
-          >
-            <FaTimes />
-          </button>
-          <Dialog.Title className="text-lg font-bold mb-3 text-purple-600 dark:text-purple-400">
-            ¿Cuánto cuesta crear tu sitio web?
-          </Dialog.Title>
-          <Dialog.Description className="text-sm text-gray-600 dark:text-gray-300">
-            Cada proyecto es único, pero aquí tienes una guía de precios referenciales:
-          </Dialog.Description>
-          <ul className="mt-4 text-sm text-gray-700 dark:text-gray-200 space-y-2">
-            <li>🌐 Landing page: desde $70.000 CLP</li>
-            <li>🛍️ Web administrable: $150.000 – $250.000 CLP</li>
-            <li>🎨 Diseño visual o rebranding: desde $50.000 CLP</li>
-            <li>🚀 Acompañamiento anual: desde $60.000 CLP</li>
-          </ul>
-          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-            Para una cotización exacta, solo necesitas escribirme 😉
-          </p>
-          <div className="mt-6 flex gap-3">
-            <a
-              href="#contacto"
-              onClick={() => setIsOpen(false)}
-              className="flex-1 text-center bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition"
-            >
-              Escríbeme
-            </a>
-            <a
-              href="https://wa.me/56945955335"
-              target="_blank"
-              className="flex-1 text-center border border-purple-600 text-purple-600 py-2 rounded-md hover:bg-purple-50 dark:hover:bg-purple-900/10"
-            >
-              WhatsApp
+          <div className="mt-auto pt-6 border-t border-gray-300">
+            <p className="text-sm text-gray-500 mb-1">Inversión única desde</p>
+            <p className="text-3xl font-bold text-brand-red mb-4">$250.000 <span className="text-sm font-normal text-gray-500">CLP</span></p>
+            <a href="#contacto" className="block w-full text-center bg-brand-red hover:bg-red-700 text-white font-medium py-3 rounded-lg transition-colors">
+              Cotizar este plan
             </a>
           </div>
-        </Dialog.Panel>
-      </Dialog>
+        </div>
+
+        {/* Sitios Corporativos & E-Commerce */}
+        <div className="bg-white p-6 md:p-8 rounded-xl shadow-2xl hover:shadow-red-500/20 transition flex flex-col h-full border-2 border-brand-red relative transform md:-translate-y-4">
+          <div className="absolute top-0 right-0 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+            MÁS POPULAR
+          </div>
+          <FaRocket className="text-4xl mb-6 text-brand-red" />
+          <h3 className="text-2xl font-bold mb-3">Corporativo & E-Commerce</h3>
+          <p className="text-gray-700 mb-6 flex-grow">
+            Plataformas completas, administrables y escalables para tu operación diaria.
+          </p>
+          <ul className="text-sm text-gray-600 space-y-3 mb-8">
+            <li className="flex items-center gap-2">✓ Panel de administración autogestionable</li>
+            <li className="flex items-center gap-2">✓ Catálogo de productos o blog</li>
+            <li className="flex items-center gap-2">✓ Optimización SEO avanzada</li>
+            <li className="flex items-center gap-2">✓ Integración con pasarelas de pago</li>
+          </ul>
+          <div className="mt-auto pt-6 border-t border-gray-200">
+            <p className="text-sm text-gray-500 mb-1">Inversión única desde</p>
+            <p className="text-3xl font-bold text-brand-red mb-4">$450.000 <span className="text-sm font-normal text-gray-500">CLP</span></p>
+            <a href="#contacto" className="block w-full text-center bg-brand-red hover:bg-red-700 text-white font-medium py-3 rounded-lg transition-colors">
+              Cotizar proyecto
+            </a>
+          </div>
+        </div>
+
+        {/* Consultoría & Soporte */}
+        <div className="bg-gray-100 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition flex flex-col h-full border border-gray-200">
+          <FaPalette className="text-4xl mb-6 text-brand-red" />
+          <h3 className="text-2xl font-bold mb-3">Consultoría & Soporte</h3>
+          <p className="text-gray-700 mb-6 flex-grow">
+            Acompañamiento técnico anual, actualizaciones y optimización continua de tu activo digital.
+          </p>
+          <ul className="text-sm text-gray-600 space-y-3 mb-8">
+            <li className="flex items-center gap-2">✓ Mantenimiento preventivo</li>
+            <li className="flex items-center gap-2">✓ Actualizaciones de seguridad</li>
+            <li className="flex items-center gap-2">✓ Asesoría en mejoras continuas</li>
+            <li className="flex items-center gap-2">✓ Soporte prioritario</li>
+          </ul>
+          <div className="mt-auto pt-6 border-t border-gray-300">
+            <p className="text-sm text-gray-500 mb-1">Planes flexibles</p>
+            <p className="text-2xl font-bold text-brand-red mb-4">A medida <span className="text-sm font-normal text-gray-500">/ Cotizar</span></p>
+            <a href="#contacto" className="block w-full text-center border-2 border-brand-red text-brand-red hover:bg-red-50 font-medium py-3 rounded-lg transition-colors">
+              Consultar planes
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
