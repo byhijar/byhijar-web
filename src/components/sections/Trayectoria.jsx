@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
+import { ANIMATION_CONFIG } from "../../config/theme";
 
 export default function Trayectoria() {
+    const isDesktop = useIsDesktop(); // Hook usage
+
     return (
         <section id="trayectoria" className="bg-white py-32 px-4 text-gray-800 border-b border-gray-100">
             <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-start">
@@ -57,8 +61,8 @@ export default function Trayectoria() {
                                 initial={{ filter: "grayscale(100%)" }}
                                 whileInView={{ filter: "grayscale(0%)" }}
                                 viewport={{ once: false, margin: "-20%" }}
-                                transition={{ duration: 2.5, ease: "easeInOut" }}
-                                style={typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? { filter: 'none' } : {}}
+                                transition={{ duration: ANIMATION_CONFIG.duration, ease: ANIMATION_CONFIG.ease }}
+                                style={isDesktop ? { filter: 'none' } : {}}
                             />
                         </div>
 

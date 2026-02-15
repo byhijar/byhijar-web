@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
+import { ANIMATION_CONFIG } from "../../config/theme";
 
 const categorias = [
   {
@@ -41,6 +43,8 @@ const categorias = [
 ];
 
 export default function TechStack() {
+  const isDesktop = useIsDesktop(); // Hook
+
   return (
     <section className="py-32 bg-gray-50 text-gray-800 border-b border-gray-100" id="tech">
       <div className="max-w-6xl mx-auto px-4 text-center">
@@ -83,8 +87,8 @@ export default function TechStack() {
                     initial={{ filter: "grayscale(100%)", opacity: 0.7 }}
                     whileInView={{ filter: "grayscale(0%)", opacity: 1 }}
                     viewport={{ once: false, margin: "-10%" }}
-                    transition={{ duration: 2.5, ease: "easeInOut" }}
-                    style={typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? { filter: 'none', opacity: 0.7 } : {}}
+                    transition={{ duration: ANIMATION_CONFIG.duration, ease: ANIMATION_CONFIG.ease }}
+                    style={isDesktop ? { filter: 'none', opacity: 0.7 } : {}}
                   />
                   <span className="text-sm font-medium text-gray-600 group-hover:text-gray-900 transition-colors">{item.nombre}</span>
                 </motion.div>

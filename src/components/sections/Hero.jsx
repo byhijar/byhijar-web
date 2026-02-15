@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
+import { ANIMATION_CONFIG } from "../../config/theme";
 
 export default function Hero() {
+  const isDesktop = useIsDesktop();
 
   return (
     <section className="min-h-screen bg-editorial-bg text-left px-6 md:px-12 flex items-center py-20 md:py-32 relative overflow-hidden">
@@ -26,8 +29,8 @@ export default function Hero() {
               initial={{ filter: "grayscale(100%)", opacity: 0.8 }}
               whileInView={{ filter: "grayscale(0%)", opacity: 1 }}
               viewport={{ once: false }}
-              transition={{ duration: 2.5, ease: "easeInOut" }}
-              style={typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? { filter: 'none', opacity: 0.8 } : {}}
+              transition={{ duration: ANIMATION_CONFIG.duration, ease: ANIMATION_CONFIG.ease }}
+              style={isDesktop ? { filter: 'none', opacity: 0.8 } : {}}
             />
           </motion.div>
 
