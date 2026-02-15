@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --text-primary: #030712;
+    /* Gray 950 */
+    --text-secondary: #111827;
+    /* Gray 900 */
+    --text-body: #4b5563;
+    /* Gray 600 */
+    --text-meta: #9ca3af;
+    /* Gray 400 */
+    --accent-structural: #7f1d1d;
+    /* Brand Red */
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+  }
+}
+
+@layer utilities {
+  @media (hover: hover) and (pointer: fine) {
+    .desktop-hover-grayscale {
+      filter: grayscale(100%);
+      transition: all 0.4s ease-out;
+    }
+
+    .desktop-hover-grayscale:hover {
+      filter: grayscale(0%);
+    }
+
+    .desktop-hover-scale:hover {
+      transform: translateY(-2px);
+    }
+  }
+}

@@ -1,39 +1,24 @@
-import {
-  FaInstagram,
-  FaWhatsapp,
-  FaLinkedin,
-  FaTiktok,
-  FaEnvelope,
-} from "react-icons/fa";
-
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-10 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <p className="text-sm text-center md:text-left">
-          © {new Date().getFullYear()} <span className="text-white font-semibold">ByHijar Web Solutions</span>
-        </p>
+    <footer className="bg-white text-gray-500 py-12 px-6 border-t border-gray-100 mt-12">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0">
 
-        <div className="text-sm text-center md:text-right">
-          <p className="text-gray-300 font-medium mb-2">¿Conversamos? Estoy disponible en:</p>
-          <div className="flex flex-wrap justify-center md:justify-end gap-4 text-lg">
-            <a href="mailto:byhijar@gmail.com" className="hover:text-white transition" title="Email">
-              <FaEnvelope />
-            </a>
-            <a href="https://www.instagram.com/byhijar" target="_blank" rel="noreferrer" className="hover:text-white transition" title="Instagram">
-              <FaInstagram />
-            </a>
-            <a href="https://wa.me/56945955335" target="_blank" rel="noreferrer" className="hover:text-white transition" title="WhatsApp">
-              <FaWhatsapp />
-            </a>
-            <a href="https://www.linkedin.com/in/jose-hijar-127727247/" target="_blank" rel="noreferrer" className="hover:text-white transition" title="LinkedIn">
-              <FaLinkedin />
-            </a>
-            <a href="https://tiktok.com/@byhijar" target="_blank" rel="noreferrer" className="hover:text-white transition" title="TikTok">
-              <FaTiktok />
-            </a>
-          </div>
+        {/* Left: Identity */}
+        <div className="space-y-1">
+          <h3 className="font-mono text-gray-900 font-semibold text-lg">byhijar_</h3>
+          <p className="text-sm font-medium text-gray-400">System Builder</p>
+          <p className="text-xs text-gray-400">Santiago, Chile</p>
         </div>
+
+        {/* Right: Technical Context */}
+        <div className="text-left md:text-right space-y-1">
+          <p className="font-mono text-xs uppercase tracking-wider text-gray-400 font-bold mb-2">Core Stack</p>
+          <p className="text-sm font-medium text-gray-600">Django & DRF / React / PostgreSQL</p>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-gray-50 text-center md:text-left flex flex-col md:flex-row justify-between text-xs text-gray-400">
+        <p>© {new Date().getFullYear()} ByHijar — Built with structure.</p>
       </div>
     </footer>
   );

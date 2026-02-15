@@ -42,16 +42,23 @@ const categorias = [
 
 export default function TechStack() {
   return (
-    <section className="py-16 bg-white text-gray-800" id="tech">
+    <section className="py-32 bg-gray-50 text-gray-800 border-b border-gray-100" id="tech">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-8"
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Habilidades y Herramientas
-        </motion.h2>
+        <div className="mb-12 space-y-4">
+          <div className="font-mono text-sm tracking-widest uppercase flex items-center justify-center gap-2">
+            <span className="text-gray-400">04</span>
+            <span className="text-brand-red">//</span>
+            <span className="text-gray-900 font-semibold">Herramientas</span>
+          </div>
+          <motion.h2
+            className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-950 leading-tight"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Stack Técnico
+          </motion.h2>
+        </div>
         <p className="mb-12 text-lg text-gray-700">
           Desarrollo, diseño y gestión: estas son las herramientas que uso para construir soluciones digitales funcionales y con estilo.
         </p>
@@ -63,19 +70,29 @@ export default function TechStack() {
               {cat.herramientas.map((item, j) => (
                 <motion.div
                   key={j}
-                  className="flex flex-col items-center bg-white/80 backdrop-blur-md p-4 rounded-xl shadow-md hover:shadow-xl transition hover:scale-105 border border-gray-200"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: j * 0.05 }}
+                  className="flex flex-col items-center justify-center p-4 bg-white rounded-lg border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group duration-300 desktop-hover-scale"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: j * 0.1 }}
+                  viewport={{ once: true, amount: 0.5 }}
                 >
-                  <img src={item.logo} alt={item.nombre} className="w-12 h-12 mb-2" />
-                  <span className="text-sm font-medium">{item.nombre}</span>
+                  <motion.img
+                    src={item.logo}
+                    alt={item.nombre}
+                    className="w-12 h-12 mb-2 desktop-hover-grayscale transition-all duration-300"
+                    initial={{ filter: "grayscale(100%)", opacity: 0.7 }}
+                    whileInView={{ filter: "grayscale(0%)", opacity: 1 }}
+                    viewport={{ once: false, margin: "-10%" }}
+                    transition={{ duration: 2.5, ease: "easeInOut" }}
+                    style={typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? { filter: 'none', opacity: 0.7 } : {}}
+                  />
+                  <span className="text-sm font-medium text-gray-600 group-hover:text-gray-900 transition-colors">{item.nombre}</span>
                 </motion.div>
               ))}
             </div>
           </div>
         ))}
       </div>
-    </section>
+    </section >
   );
 }

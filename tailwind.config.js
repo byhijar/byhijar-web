@@ -4,8 +4,16 @@ export default {
     extend: {
       colors: {
         brand: {
-          red: '#C1121F',
+          red: 'var(--accent-structural)',
           dark: '#0F0F0F',
+        },
+        editorial: {
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+          body: 'var(--text-body)',
+          meta: 'var(--text-meta)',
+          bg: 'var(--bg-primary)',
+          band: 'var(--bg-secondary)',
         }
       }
     },

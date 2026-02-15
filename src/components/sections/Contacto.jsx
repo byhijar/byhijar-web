@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaArrowRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -10,37 +10,19 @@ export default function ContactoForm() {
   const [loading, setLoading] = useState(false);
   const [captchaToken, setCaptchaToken] = useState(null);
   const [envError, setEnvError] = useState(false);
-  const [missingKeys, setMissingKeys] = useState([]);
 
   // Environment Variables
   const recaptchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
   const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-  // Google Test Key Detection
   const isTestKey = recaptchaKey?.startsWith("6LeIxAcTAAAAA");
 
   useEffect(() => {
-    const missingVars = [];
-    if (!recaptchaKey) missingVars.push("VITE_RECAPTCHA_SITE_KEY");
-    if (!emailServiceId) missingVars.push("VITE_EMAILJS_SERVICE_ID");
-    if (!emailTemplateId) missingVars.push("VITE_EMAILJS_TEMPLATE_ID");
-    if (!emailPublicKey) missingVars.push("VITE_EMAILJS_PUBLIC_KEY");
-
-    if (missingVars.length > 0) {
-      console.warn("⚠️ [Config Check] Missing environment variables:", missingVars);
-      setMissingKeys(missingVars);
+    if (!recaptchaKey || !emailServiceId || !emailTemplateId || !emailPublicKey) {
       setEnvError(true);
-    } else {
-      setEnvError(false);
-      setMissingKeys([]);
     }
-
-    if (isTestKey) {
-      console.warn("⚠️ [Config Check] Using Google ReCAPTCHA Test Key. THIS IS FOR TESTING ONLY. Do not use in production.");
-    }
-  }, [recaptchaKey, emailServiceId, emailTemplateId, emailPublicKey, isTestKey]);
+  }, [recaptchaKey, emailServiceId, emailTemplateId, emailPublicKey]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -54,7 +36,6 @@ export default function ContactoForm() {
     e.preventDefault();
     setStatus(null);
 
-    // Validaciones básicas
     if (!form.name || !form.email || !form.message) {
       setStatus("incompleto");
       return;
@@ -65,44 +46,26 @@ export default function ContactoForm() {
       return;
     }
 
-    if (envError) {
-      console.error("❌ Cannot submit: Missing environment variables");
-      return;
-    }
+    if (envError) return;
 
     setLoading(true);
 
-    const dataConFirma = {
-      ...form,
-      message: `${form.message}\n\n----\nMensaje enviado desde byhijar.cl`,
-    };
-
     try {
-      console.log("🚀 Iniciando envío...");
-
-      // Intento EmailJS
-      try {
-        await emailjs.send(
-          emailServiceId,
-          emailTemplateId,
-          {
-            name: form.name,
-            email: form.email,
-            message: dataConFirma.message,
-          },
-          emailPublicKey
-        );
-        console.log("✅ EmailJS enviado OK");
-      } catch (emailError) {
-        console.error("❌ Error EmailJS:", emailError);
-        throw new Error(`EmailJS Failed: ${JSON.stringify(emailError)}`);
-      }
-
+      await emailjs.send(
+        emailServiceId,
+        emailTemplateId,
+        {
+          name: form.name,
+          email: form.email,
+          message: `${form.message}\n\n----\nMensaje enviado desde byhijar.cl`,
+        },
+        emailPublicKey
+      );
       setStatus("ok");
       setForm({ name: "", email: "", message: "" });
       setCaptchaToken(null);
     } catch (err) {
-      console.error("❌ Error General:", err);
+      console.error(err);
       setStatus("error");
     } finally {
       setLoading(false);
@@ -110,168 +73,147 @@ export default function ContactoForm() {
   };
 
   return (
-    <section
-      id="contacto"
-      className="bg-white py-16 px-4 text-gray-900"
-      aria-labelledby="contacto-title"
-    >
-      <div className="max-w-2xl mx-auto text-center space-y-4">
-        <h2 id="contacto-title" className="text-4xl font-bold">
-          ¿Listo para transformar tu idea en realidad?
-        </h2>
-        <p className="text-lg text-gray-600">
-          Házmelo saber. Estoy aquí para ayudarte a lanzar, escalar o simplemente empezar.
-        </p>
-      </div>
+    <section id="contacto" className="bg-editorial-bg py-32 px-6 md:px-12 text-editorial-primary border-t border-gray-100">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-20 items-start">
 
-      <form
-        onSubmit={handleSubmit}
-        className="mt-10 max-w-xl mx-auto space-y-6 bg-gray-100 p-8 rounded-xl shadow-md transition-colors"
-      >
-        <div>
-          <label htmlFor="name" className="block text-sm mb-1 font-medium">
-            ¿Cómo te llamas?
-          </label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Escribe tu nombre aquí"
-            required
-            disabled={envError}
-            className="w-full p-3 border border-gray-300 bg-white text-gray-900 rounded disabled:opacity-50"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm mb-1 font-medium">
-            ¿Dónde te escribo?
-          </label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="Tu correo electrónico"
-            required
-            disabled={envError}
-            className="w-full p-3 border border-gray-300 bg-white text-gray-900 rounded disabled:opacity-50"
-          />
-        </div>
-        <div>
-          <label htmlFor="message" className="block text-sm mb-1 font-medium">
-            ¿Qué necesitas?
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="Contáme brevemente tu idea, proyecto o problema"
-            required
-            disabled={envError}
-            className="w-full p-3 border border-gray-300 bg-white text-gray-900 rounded h-36 disabled:opacity-50"
-          />
-        </div>
-
-        <div className="flex justify-center flex-col items-center gap-2">
-          {recaptchaKey ? (
-            <>
-              <ReCAPTCHA
-                sitekey={recaptchaKey}
-                onChange={handleCaptcha}
-              />
-              {isTestKey && (
-                <p className="text-xs text-yellow-600 font-medium">
-                  ⚠️ Modo Test Activado (Key de Prueba)
-                </p>
-              )}
-            </>
-          ) : (
-            <div className="p-4 bg-yellow-100 text-yellow-800 rounded text-sm border border-yellow-200">
-              ⚠️ Captcha no configurado (Falta Site Key)
+        {/* Left Column: Editorial Context */}
+        <div className="lg:col-span-5 space-y-12">
+          <div className="space-y-6">
+            <div className="font-mono text-sm tracking-widest uppercase flex items-center gap-3">
+              <span className="text-editorial-meta">04</span>
+              <span className="text-brand-red w-4 h-[1px] bg-brand-red inline-block"></span>
+              <span className="text-editorial-secondary font-semibold">Solicitud</span>
             </div>
-          )}
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-editorial-primary leading-[0.9]">
+              Hablemos de <br /> arquitectura.
+            </h2>
+            <p className="text-xl text-editorial-body leading-relaxed font-medium">
+              Si tu operación está en caos (planillas, WhatsApp, duplicidad), lo convertimos en un sistema estable.
+            </p>
+          </div>
+
+          <div className="space-y-8 border-t border-gray-200 pt-8">
+            <div className="space-y-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-editorial-secondary">Alcance</h3>
+              <ul className="space-y-2 text-editorial-body text-lg">
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Automatización de Procesos</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Desarrollo Backend & APIs</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Integración de Sistemas</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-editorial-secondary">Stack</h3>
+              <p className="font-mono text-editorial-meta text-sm">
+                Django / DRF / React / PostgreSQL
+              </p>
+            </div>
+          </div>
+
+          <div className="pt-4">
+            <a
+              href="https://wa.me/56945955335"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 text-brand-red font-bold hover:text-red-800 transition-colors text-lg"
+            >
+              <FaWhatsapp className="text-xl" /> Chat Directo (WhatsApp)
+            </a>
+          </div>
         </div>
 
-        <button
-          type="submit"
-          disabled={loading || envError || !recaptchaKey}
-          className={`w-full ${loading || envError || !recaptchaKey
-            ? "bg-gray-400 cursor-not-allowed"
-            : "bg-brand-red hover:bg-red-700"
-            } text-white py-3 rounded font-semibold transition`}
-        >
-          {loading ? "Enviando..." : envError ? `Formulario temporalmente deshabilitado por configuración.` : "Enviar mensaje ahora"}
-        </button>
+        {/* Right Column: Lineal Form */}
+        <div className="lg:col-span-7 pt-4 relative z-10">
+          <form onSubmit={handleSubmit} className="space-y-12">
 
-        {envError && (
-          <div className="mt-4 p-4 bg-red-100 text-red-800 rounded text-sm border border-red-200">
-            <p className="font-bold">⚠️ Error de Configuración</p>
-            <p>Formulario temporalmente deshabilitado por configuración.</p>
-            <p className="text-xs mt-2 text-red-600">Revisar consola para ver las llaves faltantes.</p>
-          </div>
-        )}
+            <div className="space-y-8">
+              <div className="relative group">
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Nombre / Organización"
+                  required
+                  className="w-full bg-transparent border-b border-gray-300 py-4 text-xl md:text-2xl text-editorial-primary placeholder-gray-300 focus:outline-none focus:border-brand-red transition-all duration-300 disabled:opacity-50"
+                />
+                <label className="absolute -top-3 left-0 text-xs font-bold uppercase tracking-widest text-editorial-meta group-focus-within:text-brand-red transition-colors">
+                  Identidad
+                </label>
+              </div>
 
-        <AnimatePresence>
-          {status === "ok" && (
-            <motion.p
-              className="text-green-600 text-center font-medium"
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-            >
-              ¡Gracias por tu mensaje! Te responderé lo antes posible.
-            </motion.p>
-          )}
-          {status === "error" && (
-            <motion.p
-              className="text-red-600 text-center font-medium"
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-            >
-              Algo salió mal. Intenta nuevamente o escríbeme por WhatsApp.
-            </motion.p>
-          )}
-          {status === "captcha" && (
-            <motion.p
-              className="text-yellow-600 text-center font-medium"
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-            >
-              Por favor completa el captcha antes de enviar.
-            </motion.p>
-          )}
-          {status === "incompleto" && (
-            <motion.p
-              className="text-red-500 text-center font-medium"
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-            >
-              Por favor completa todos los campos del formulario.
-            </motion.p>
-          )}
-        </AnimatePresence>
+              <div className="relative group">
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="correo@organizacion.com"
+                  required
+                  className="w-full bg-transparent border-b border-gray-300 py-4 text-xl md:text-2xl text-editorial-primary placeholder-gray-300 focus:outline-none focus:border-brand-red transition-all duration-300 disabled:opacity-50"
+                />
+                <label className="absolute -top-3 left-0 text-xs font-bold uppercase tracking-widest text-editorial-meta group-focus-within:text-brand-red transition-colors">
+                  Contacto
+                </label>
+              </div>
 
-      </form>
+              <div className="relative group">
+                <textarea
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Describe el problema y el contexto del sistema que necesitas."
+                  required
+                  rows="4"
+                  className="w-full bg-transparent border-b border-gray-300 py-4 text-xl md:text-2xl text-editorial-primary placeholder-gray-300 focus:outline-none focus:border-brand-red transition-all duration-300 disabled:opacity-50 resize-none"
+                />
+                <label className="absolute -top-3 left-0 text-xs font-bold uppercase tracking-widest text-editorial-meta group-focus-within:text-brand-red transition-colors">
+                  Contexto & Requerimiento
+                </label>
+              </div>
+            </div>
 
-      <div className="mt-8 text-center">
-        <p className="mb-3 text-gray-700 text-base">
-          ¿Tienes dudas o prefieres una conversación directa?
-        </p>
-        <a
-          href="https://wa.me/56945955335"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-full font-medium transition"
-        >
-          <FaWhatsapp className="mr-2 text-lg" /> Contáctame por WhatsApp
-        </a>
+            <div className="space-y-6">
+              {recaptchaKey && (
+                <div className="transform scale-90 origin-left">
+                  <ReCAPTCHA sitekey={recaptchaKey} onChange={handleCaptcha} />
+                  {isTestKey && <p className="text-xs text-yellow-600 mt-2">⚠️ Test Mode</p>}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading || envError || !recaptchaKey}
+                className={`group flex items-center gap-4 text-xl md:text-2xl font-bold transition-all duration-300
+                            ${loading || envError || !recaptchaKey ? 'text-gray-300 cursor-not-allowed' : 'text-editorial-primary hover:text-brand-red'}
+                        `}
+              >
+                {loading ? "Enviando Solicitud..." : "Enviar Solicitud"}
+                <FaArrowRight className={`text-lg transition-transform duration-300 ${!loading && !envError && recaptchaKey ? 'group-hover:translate-x-2' : ''}`} />
+              </button>
+
+              <AnimatePresence>
+                {status === "ok" && (
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-brand-red font-medium">
+                    Solicitud recibida. Analizaré el caso y responderé en breve.
+                  </motion.p>
+                )}
+                {status === "error" && (
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-red-600 font-medium">
+                    Error en el envío. Por favor intenta vía WhatsApp.
+                  </motion.p>
+                )}
+                {(status === "captcha" || status === "incompleto") && (
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-editorial-body font-medium">
+                    Por favor completa todos los campos y la verificación.
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
+
+          </form>
+        </div>
+
       </div>
     </section>
   );
