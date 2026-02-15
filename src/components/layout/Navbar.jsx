@@ -11,10 +11,17 @@ export default function Navbar() {
       const sections = document.querySelectorAll("section[id]");
       let current = "";
 
+      // Check if we're at the bottom of the page
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+        setActiveSection("contacto");
+        return;
+      }
+
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 150) {
+        // Adjusted threshold for better accuracy
+        if (window.scrollY >= sectionTop - 250) {
           current = section.getAttribute("id");
         }
       });

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaWhatsapp, FaArrowRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -10,6 +10,8 @@ export default function ContactoForm() {
   const [loading, setLoading] = useState(false);
   const [captchaToken, setCaptchaToken] = useState(null);
   const [envError, setEnvError] = useState(false);
+
+  const recaptchaRef = useRef(null);
 
   // Environment Variables
   const recaptchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
@@ -30,6 +32,10 @@ export default function ContactoForm() {
 
   const handleCaptcha = (token) => {
     setCaptchaToken(token);
+  };
+
+  const handleExpire = () => {
+    setCaptchaToken(null);
   };
 
   const handleSubmit = async (e) => {
@@ -64,9 +70,11 @@ export default function ContactoForm() {
       setStatus("ok");
       setForm({ name: "", email: "", message: "" });
       setCaptchaToken(null);
+      if (recaptchaRef.current) recaptchaRef.current.reset();
     } catch (err) {
       console.error(err);
       setStatus("error");
+      if (recaptchaRef.current) recaptchaRef.current.reset();
     } finally {
       setLoading(false);
     }
@@ -176,7 +184,12 @@ export default function ContactoForm() {
             <div className="space-y-6">
               {recaptchaKey && (
                 <div className="transform scale-90 origin-left">
-                  <ReCAPTCHA sitekey={recaptchaKey} onChange={handleCaptcha} />
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={recaptchaKey}
+                    onChange={handleCaptcha}
+                    onExpired={handleExpire}
+                  />
                   {isTestKey && <p className="text-xs text-yellow-600 mt-2">⚠️ Test Mode</p>}
                 </div>
               )}
