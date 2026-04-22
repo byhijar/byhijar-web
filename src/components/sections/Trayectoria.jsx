@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { ANIMATION_CONFIG } from "../../config/theme";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function Trayectoria() {
-    const isDesktop = useIsDesktop(); // Hook usage
+    const isDesktop = useIsDesktop();
+    const { t } = useLanguage();
 
     return (
         <section id="trayectoria" className="bg-white py-32 px-4 text-gray-800 border-b border-gray-100">
@@ -18,24 +20,24 @@ export default function Trayectoria() {
                 >
                     <div className="space-y-4">
                         <div className="font-mono text-sm tracking-widest uppercase flex items-center gap-2">
-                            <span className="text-gray-400">03</span>
+                            <span className="text-gray-400">04</span>
                             <span className="text-brand-red">//</span>
-                            <span className="text-gray-900 font-semibold">Trayectoria</span>
+                            <span className="text-gray-900 font-semibold">{t('trajectory.section_label')}</span>
                         </div>
                         <h2 className="text-5xl md:text-7xl font-bold text-gray-950 tracking-tighter leading-tight">
-                            Manifiesto.
+                            {t('trajectory.title')}
                         </h2>
                     </div>
 
                     <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-normal">
                         <p className="font-medium text-gray-900 text-xl">
-                            Escribir código es fácil. Entender el negocio es lo difícil.
+                            {t('trajectory.manifesto_main')}
                         </p>
                         <p>
-                            Opero en esa intersección. No soy una agencia que subcontrata ni un freelancer que desaparece. Soy un ingeniero que entiende que tu software es un activo, no un gasto decorativo.
+                            {t('trajectory.p1')}
                         </p>
                         <p>
-                            Mi trabajo no termina en el despliegue. Termina cuando el sistema es estable, seguro y rentable. Si buscas validación rápida, usa herramientas no-code. Si buscas cimientos sólidos para escalar durante los próximos 5 años, estás en el lugar correcto.
+                            {t('trajectory.p2')}
                         </p>
                         <div className="pt-6">
                             <p className="text-sm font-mono text-gray-400 mt-2">José Hijar — System Builder</p>

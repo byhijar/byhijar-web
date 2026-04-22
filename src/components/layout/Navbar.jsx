@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaGlobe } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,21 +44,24 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { id: "#proyectos", label: "Proyectos", sectionId: "proyectos" },
-    { id: "#enfoque", label: "Enfoque", sectionId: "enfoque" },
-    { id: "#trayectoria", label: "Trayectoria", sectionId: "trayectoria" },
-    { id: "#tech", label: "Tech", sectionId: "tech" },
-    { id: "#contacto", label: "Contacto", sectionId: "contacto" },
+    { id: "#proyectos", label: t('nav.projects'), sectionId: "proyectos" },
+    { id: "#enfoque", label: t('nav.approach'), sectionId: "enfoque" },
+    { id: "#contenido", label: t('nav.content'), sectionId: "contenido" },
+    { id: "#trayectoria", label: t('nav.trajectory'), sectionId: "trayectoria" },
+    { id: "#tech", label: t('nav.tech'), sectionId: "tech" },
+    { id: "#contacto", label: t('nav.contact'), sectionId: "contacto" },
   ];
 
   const getPageTitle = (section) => {
+    const base = 'ByHijar — System Builder';
     switch (section) {
-      case 'proyectos': return 'Proyectos | ByHijar';
-      case 'enfoque': return 'Enfoque | ByHijar';
-      case 'trayectoria': return 'Trayectoria | ByHijar';
-      case 'tech': return 'Tecnologías | ByHijar';
-      case 'contacto': return 'Contacto | ByHijar';
-      default: return 'ByHijar — System Builder';
+      case 'proyectos': return `${t('nav.projects')} | ByHijar`;
+      case 'contenido': return `${t('nav.content')} | ByHijar`;
+      case 'enfoque': return `${t('nav.approach')} | ByHijar`;
+      case 'trayectoria': return `${t('nav.trajectory')} | ByHijar`;
+      case 'tech': return `${t('nav.tech')} | ByHijar`;
+      case 'contacto': return `${t('nav.contact')} | ByHijar`;
+      default: return base;
     }
   };
 
@@ -98,6 +103,13 @@ export default function Navbar() {
                 ></span>
               </button>
             ))}
+
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 px-3 py-1 border border-gray-200 rounded-full hover:border-brand-red hover:text-brand-red transition-all duration-300 text-xs font-bold uppercase tracking-widest"
+            >
+              <FaGlobe /> {language === 'es' ? 'EN' : 'ES'}
+            </button>
           </nav>
 
           {/* Mobile Actions */}
@@ -128,6 +140,12 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
+            <button
+              onClick={toggleLanguage}
+              className="w-full text-left font-bold text-sm py-4 text-editorial-secondary flex items-center gap-3 border-t border-gray-100"
+            >
+              <FaGlobe /> {language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+            </button>
           </nav>
         )}
       </header>

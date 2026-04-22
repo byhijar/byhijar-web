@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Hero from './components/sections/Hero';
+import Content from './components/sections/Content';
 import Enfoque from './components/sections/Enfoque';
 import Proyectos from './components/sections/Proyectos';
 import Trayectoria from './components/sections/Trayectoria';
@@ -26,6 +27,10 @@ function App() {
         </section>
 
         <Enfoque />
+
+        <section id="contenido" aria-label="Contenido">
+          <Content />
+        </section>
 
         <section id="trayectoria" aria-label="Trayectoria">
           <Trayectoria />

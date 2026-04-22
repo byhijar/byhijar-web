@@ -3,8 +3,10 @@ import { FaWhatsapp, FaArrowRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function ContactoForm() {
+  const { t } = useLanguage();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -88,25 +90,27 @@ export default function ContactoForm() {
         <div className="lg:col-span-5 space-y-12">
           <div className="space-y-6">
             <div className="font-mono text-sm tracking-widest uppercase flex items-center gap-3">
-              <span className="text-editorial-meta">04</span>
+              <span className="text-editorial-meta">06</span>
               <span className="text-brand-red w-4 h-[1px] bg-brand-red inline-block"></span>
-              <span className="text-editorial-secondary font-semibold">Solicitud</span>
+              <span className="text-editorial-secondary font-semibold">{t('contact.section_label')}</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-editorial-primary leading-[0.9]">
-              Hablemos de <br /> arquitectura.
+              {t('contact.title1')} <br /> {t('contact.title2')}
             </h2>
             <p className="text-xl text-editorial-body leading-relaxed font-medium">
-              Si tu operación está en caos (planillas, WhatsApp, duplicidad), lo convertimos en un sistema estable.
+              {t('contact.description')}
             </p>
           </div>
 
           <div className="space-y-8 border-t border-gray-200 pt-8">
             <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-editorial-secondary">Alcance</h3>
+              <h3 className="text-sm font-bold uppercase tracking-widest text-editorial-secondary">{t('contact.scope_label')}</h3>
               <ul className="space-y-2 text-editorial-body text-lg">
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Automatización de Procesos</li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Desarrollo Backend & APIs</li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Integración de Sistemas</li>
+                {t('contact.scope_items').map((item, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-brand-red rounded-full"></span> {item}
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -125,7 +129,7 @@ export default function ContactoForm() {
               rel="noreferrer"
               className="inline-flex items-center gap-3 text-brand-red font-bold hover:text-red-800 transition-colors text-lg"
             >
-              <FaWhatsapp className="text-xl" /> Chat Directo (WhatsApp)
+              <FaWhatsapp className="text-xl" /> {t('contact.chat_cta')}
             </a>
           </div>
         </div>
@@ -141,12 +145,12 @@ export default function ContactoForm() {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Nombre / Organización"
+                  placeholder={t('contact.labels.name_placeholder')}
                   required
                   className="w-full bg-transparent border-b border-gray-300 py-4 text-xl md:text-2xl text-editorial-primary placeholder-gray-300 focus:outline-none focus:border-brand-red transition-all duration-300 disabled:opacity-50"
                 />
                 <label className="absolute -top-3 left-0 text-xs font-bold uppercase tracking-widest text-editorial-meta group-focus-within:text-brand-red transition-colors">
-                  Identidad
+                  {t('contact.labels.identity')}
                 </label>
               </div>
 
@@ -156,12 +160,12 @@ export default function ContactoForm() {
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="correo@organizacion.com"
+                  placeholder={t('contact.labels.email_placeholder')}
                   required
                   className="w-full bg-transparent border-b border-gray-300 py-4 text-xl md:text-2xl text-editorial-primary placeholder-gray-300 focus:outline-none focus:border-brand-red transition-all duration-300 disabled:opacity-50"
                 />
                 <label className="absolute -top-3 left-0 text-xs font-bold uppercase tracking-widest text-editorial-meta group-focus-within:text-brand-red transition-colors">
-                  Contacto
+                  {t('contact.labels.contact')}
                 </label>
               </div>
 
@@ -170,13 +174,13 @@ export default function ContactoForm() {
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="Describe el problema y el contexto del sistema que necesitas."
+                  placeholder={t('contact.labels.message_placeholder')}
                   required
                   rows="4"
                   className="w-full bg-transparent border-b border-gray-300 py-4 text-xl md:text-2xl text-editorial-primary placeholder-gray-300 focus:outline-none focus:border-brand-red transition-all duration-300 disabled:opacity-50 resize-none"
                 />
                 <label className="absolute -top-3 left-0 text-xs font-bold uppercase tracking-widest text-editorial-meta group-focus-within:text-brand-red transition-colors">
-                  Contexto & Requerimiento
+                  {t('contact.labels.context')}
                 </label>
               </div>
             </div>
@@ -201,24 +205,24 @@ export default function ContactoForm() {
                             ${loading || envError || !recaptchaKey ? 'text-gray-300 cursor-not-allowed' : 'text-editorial-primary hover:text-brand-red'}
                         `}
               >
-                {loading ? "Enviando Solicitud..." : "Enviar Solicitud"}
+                {loading ? t('contact.labels.sending') : t('contact.labels.submit')}
                 <FaArrowRight className={`text-lg transition-transform duration-300 ${!loading && !envError && recaptchaKey ? 'group-hover:translate-x-2' : ''}`} />
               </button>
 
               <AnimatePresence>
                 {status === "ok" && (
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-brand-red font-medium">
-                    Solicitud recibida. Analizaré el caso y responderé en breve.
+                    {t('contact.status.ok')}
                   </motion.p>
                 )}
                 {status === "error" && (
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-red-600 font-medium">
-                    Error en el envío. Por favor intenta vía WhatsApp.
+                    {t('contact.status.error')}
                   </motion.p>
                 )}
                 {(status === "captcha" || status === "incompleto") && (
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-editorial-body font-medium">
-                    Por favor completa todos los campos y la verificación.
+                    {t('contact.status.captcha')}
                   </motion.p>
                 )}
               </AnimatePresence>

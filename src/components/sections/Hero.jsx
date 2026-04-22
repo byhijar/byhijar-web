@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { ANIMATION_CONFIG } from "../../config/theme";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function Hero() {
   const isDesktop = useIsDesktop();
+  const { t } = useLanguage();
 
   return (
     <section className="min-h-screen bg-editorial-bg text-left px-6 md:px-12 flex items-center py-20 md:py-32 relative overflow-hidden">
@@ -51,7 +53,7 @@ export default function Hero() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, ease: "circOut" }}
               >
-                Sistemas <br /> con criterio.
+                {t('hero.subtitle1')}
               </motion.h1>
             </div>
 
@@ -62,7 +64,7 @@ export default function Hero() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: "circOut" }}
               >
-                Código con <span className="text-brand-red">intención</span>.
+                {t('hero.subtitle2')} <span className="text-brand-red">{t('hero.intention')}</span>.
               </motion.h1>
             </div>
           </div>
@@ -74,8 +76,7 @@ export default function Hero() {
             transition={{ delay: 0.8, duration: 0.8 }}
           >
             <p className="text-xl md:text-2xl text-editorial-body font-medium leading-relaxed">
-              Transformo caos operativo en software estructurado. <br />
-              Arquitectura <span className="text-editorial-primary font-semibold">Django</span> & <span className="text-editorial-primary font-semibold">React</span> para problemas reales.
+              {t('hero.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 pt-12">
@@ -84,13 +85,13 @@ export default function Hero() {
                 className="group flex items-center gap-3 text-editorial-primary font-bold text-lg hover:text-brand-red transition-colors"
               >
                 <span className="w-12 h-[2px] bg-brand-red group-hover:w-20 transition-all duration-300"></span>
-                Ver Proyectos
+                {t('hero.cta_view')}
               </a>
               <a
                 href="#contacto"
                 className="text-editorial-meta hover:text-editorial-primary transition-colors font-medium text-lg flex items-center gap-2"
               >
-                Hablemos
+                {t('hero.cta_talk')}
               </a>
             </div>
           </motion.div>

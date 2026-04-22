@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { ANIMATION_CONFIG } from "../../config/theme";
+import { useLanguage } from "../../context/LanguageContext";
 
 const categorias = [
   {
@@ -40,19 +41,28 @@ const categorias = [
       { nombre: "Illustrator", logo: "/logos/illustrator.svg" },
     ],
   },
+  {
+    titulo: "Contenido & Producción",
+    herramientas: [
+      { nombre: "Producción de Video", logo: "/logos/guacamole.svg" }, // Placeholder logo
+      { nombre: "Storytelling", logo: "/logos/scrum.svg" }, // Placeholder logo
+      { nombre: "Post-Producción", logo: "/logos/photoshop.svg" }, // Placeholder logo
+    ],
+  },
 ];
 
 export default function TechStack() {
-  const isDesktop = useIsDesktop(); // Hook
+  const isDesktop = useIsDesktop();
+  const { t } = useLanguage();
 
   return (
     <section className="py-32 bg-gray-50 text-gray-800 border-b border-gray-100" id="tech">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <div className="mb-12 space-y-4">
           <div className="font-mono text-sm tracking-widest uppercase flex items-center justify-center gap-2">
-            <span className="text-gray-400">04</span>
+            <span className="text-gray-400">05</span>
             <span className="text-brand-red">//</span>
-            <span className="text-gray-900 font-semibold">Herramientas</span>
+            <span className="text-gray-900 font-semibold">{t('tech.section_label')}</span>
           </div>
           <motion.h2
             className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-950 leading-tight"
@@ -60,16 +70,16 @@ export default function TechStack() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Stack Técnico
+            {t('tech.title')}
           </motion.h2>
         </div>
         <p className="mb-12 text-lg text-gray-700">
-          Desarrollo, diseño y gestión: estas son las herramientas que uso para construir soluciones digitales funcionales y con estilo.
+          {t('tech.description')}
         </p>
 
         {categorias.map((cat, i) => (
           <div key={i} className="mb-12 text-left">
-            <h3 className="text-xl font-semibold mb-6 border-l-4 border-brand-red pl-3">{cat.titulo}</h3>
+            <h3 className="text-xl font-semibold mb-6 border-l-4 border-brand-red pl-3">{t(`tech.categories.${i}`)}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
               {cat.herramientas.map((item, j) => (
                 <motion.div
