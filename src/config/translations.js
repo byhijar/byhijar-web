@@ -54,23 +54,23 @@ export const translations = {
       ]
     },
     content: {
-      section_label: "Documentación & Media",
-      title1: "Insights",
-      title2: "Hub.",
-      description: "Como ByHijar, comparto mi proceso de arquitectura y gestión con una comunidad de +100k personas. Humanizando la ingeniería para crear mejores negocios.",
+      section_label: "Building in Public",
+      title1: "Proceso",
+      title2: "En Vivo.",
+      description: "Construyo cosas. Algunas funcionan, otras fallan. Aquí comparto el proceso real detrás de crear software y resolver problemas.",
       status: "Status: Live",
-      card_title: "Documentando la construcción de Par Digital.",
-      card_desc: "Muestro cómo construyo sistemas desde cero en TikTok e Instagram, validando la metodología que aplicamos con nuestros clientes de consultoría.",
-      cta_youtube: "Ver Contenido (TikTok)",
+      card_title: "Documentando la realidad de crear software.",
+      card_desc: "No hay atajos mágicos. Muestro mis aciertos y errores diarios construyendo sistemas y manejando mi carrera independiente.",
+      cta_youtube: "Ver Diario en TikTok",
       steps: [
         { title: "Arquitectura Real", desc: "Mostrando los retos técnicos detrás de cada sistema que diseñamos." },
         { title: "Gestión Freelance", desc: "Compartiendo la realidad de manejar proyectos de alto impacto de forma independiente." },
         { title: "Innovación Retail", desc: "Explorando cómo la tecnología transforma negocios tradicionales como joyerías y e-commerce." }
       ],
       vision: [
-        { label: "El Creador", desc: "ByHijar: La cara y el cerebro estratégico detrás de la arquitectura de cada solución." },
-        { label: "La Ejecución", desc: "Par Digital: La firma de consultoría que transforma esos diseños en software robusto y estable." },
-        { label: "El Impacto", desc: "Uniendo narrativa digital y técnica pura para elevar el estándar del desarrollo de software local." }
+        { label: "Arquitectura Real", desc: "Resolviendo problemas de negocio con código, sin filtros ni atajos mágicos." },
+        { label: "El Día a Día", desc: "La realidad de la ingeniería de software, automatización y manejo de clientes." },
+        { label: "Diario de Desarrollo", desc: "Mis aciertos y errores mientras levanto proyectos y construyo mi carrera en tecnología." }
       ]
     },
     approach: {
@@ -183,23 +183,23 @@ export const translations = {
       ]
     },
     content: {
-      section_label: "Documentation & Media",
-      title1: "Insights",
-      title2: "Hub.",
-      description: "As ByHijar, I share my architecture and management process with a community of +100k people. Humanizing engineering to create better businesses.",
+      section_label: "Building in Public",
+      title1: "Live",
+      title2: "Process.",
+      description: "I build things. Some work, some fail. Here I share the real process behind creating software and solving problems.",
       status: "Status: Live",
-      card_title: "Documenting Par Digital's building process.",
-      card_desc: "I show how I build systems from scratch on TikTok and Instagram, validating the methodology we apply with our consulting clients.",
-      cta_youtube: "View Content (TikTok)",
+      card_title: "Documenting the reality of building software.",
+      card_desc: "No magic shortcuts. I show my daily wins and mistakes building systems and managing my independent career.",
+      cta_youtube: "Watch Journal on TikTok",
       steps: [
         { title: "Real Architecture", desc: "Showing the technical challenges behind every system we design." },
         { title: "Freelance Management", desc: "Sharing the reality of managing high-impact projects independently." },
         { title: "Retail Innovation", desc: "Exploring how technology transforms traditional businesses like jewelry and e-commerce." }
       ],
       vision: [
-        { label: "The Creator", desc: "ByHijar: The face and strategic brain behind every solution's architecture." },
-        { label: "The Execution", desc: "Par Digital: The consulting firm that transforms those designs into robust and stable software." },
-        { label: "The Impact", desc: "Uniting digital narrative and pure technique to raise the bar of local software development." }
+        { label: "Real Architecture", desc: "Solving business problems with code, without filters or magic shortcuts." },
+        { label: "The Day-to-Day", desc: "The reality of software engineering, automation, and handling clients." },
+        { label: "Dev Journal", desc: "My wins and mistakes while bootstrapping projects and building a career in tech." }
       ]
     },
     approach: {
