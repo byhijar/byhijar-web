@@ -103,23 +103,9 @@ export default function ContactoForm() {
           </div>
 
           <div className="space-y-8 border-t border-gray-200 pt-8">
-            <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-editorial-secondary">{t('contact.scope_label')}</h3>
-              <ul className="space-y-2 text-editorial-body text-lg">
-                {t('contact.scope_items').map((item, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-brand-red rounded-full"></span> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-editorial-secondary">Stack</h3>
-              <p className="font-mono text-editorial-meta text-sm">
-                Django / DRF / React / PostgreSQL
-              </p>
-            </div>
+            <p className="text-lg text-editorial-body font-medium">
+              Te ayudaré a entender exactamente dónde está tu cuello de botella y si un sistema a medida es la solución adecuada para ti en este momento. Sin compromisos.
+            </p>
           </div>
 
           <div className="pt-4">

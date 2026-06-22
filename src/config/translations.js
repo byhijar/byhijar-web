@@ -1,260 +1,234 @@
 export const translations = {
   es: {
     nav: {
+      home: "Inicio",
+      solutions: "Soluciones",
+      method: "Método",
       projects: "Proyectos",
-      content: "Contenido",
-      approach: "Enfoque",
-      trajectory: "Trayectoria",
-      tech: "Tech",
+      about: "Sobre Mí",
       contact: "Contacto",
     },
     hero: {
-      subtitle1: "Sistemas con criterio.",
-      subtitle2: "Código con ",
-      intention: "intención",
-      description: "Ingeniería de Software & Narrativa Digital. Diseño sistemas con Django y React mientras documento el proceso para elevar el estándar técnico.",
-      cta_view: "Ver Proyectos",
-      cta_talk: "Hablemos",
+      title1: "Sistemas simples para negocios",
+      title2: "que ya crecieron demasiado para seguir usando Excel.",
+      subtitle: "Sistemas a medida para controlar tu operación, reducir errores manuales y escalar sin depender de planillas.",
+      cta_primary: "Quiero ordenar mi negocio",
+      cta_secondary: "Ver cómo trabajo",
+    },
+    problem: {
+      section_label: "El Problema",
+      title: "El caos de crecer.",
+      description: "Operar con Excel y WhatsApp funcionaba al principio. Hoy, ese desorden te frena:",
+      items: [
+        "Datos perdidos entre chats y planillas.",
+        "Decisiones a ciegas, sin números reales.",
+        "Errores manuales que cuestan dinero.",
+        "Tu tiempo consumido en tareas repetitivas."
+      ]
+    },
+    solutions: {
+      section_label: "Soluciones",
+      title: "Orden, control y claridad.",
+      description: "Desarrollo herramientas internas que automatizan tu día a día. Sin tecnicismos.",
+      items: [
+        { title: "Inventario y Stock", desc: "Control exacto de tus productos y alertas automáticas de escasez." },
+        { title: "Ventas y Reportes", desc: "Métricas en tiempo real para tomar decisiones rápidas e informadas." },
+        { title: "Gestión de Clientes", desc: "Historial de compras y base de datos centralizada en un solo lugar." },
+        { title: "Automatización", desc: "Cero tareas manuales. Flujos 100% digitales y sin fricción." }
+      ]
+    },
+    method: {
+      section_label: "Método de Trabajo",
+      title: "Del caos a un sistema operando.",
+      description: "Un proceso ágil, sin tecnicismos y enfocado directamente en resultados comerciales.",
+      steps: [
+        { title: "Diagnóstico", desc: "Identificamos el principal cuello de botella de tu operación actual." },
+        { title: "Diseño", desc: "Propongo un sistema simple y enfocado directamente en resolver ese problema." },
+        { title: "Implementación", desc: "Construyo y despliego la herramienta sin interrumpir tu día a día." },
+        { title: "Capacitación", desc: "Entrenamiento rápido y efectivo para asegurar que tu equipo lo use." }
+      ],
+      recurrent: {
+        title: "Acompañamiento Mensual",
+        desc: "Tu negocio cambia, el sistema también. Trabajo con una suscripción que incluye soporte, mejoras y ajustes continuos. Evolucionamos juntos."
+      }
     },
     projects: {
-      title1: "Soluciones de",
-      title2: "Arquitectura.",
-      case_studies: "Case Studies by Par Digital",
-      view_prod: "Ver en Producción",
-      tech_label: "Tecnología",
+      section_label: "Proyectos Reales",
+      title1: "Casos",
+      title2: "de Éxito.",
+      case_studies: "Sistemas implementados",
+      view_prod: "Ver Resultados",
       challenge: "El Desafío",
-      decision: "Decisión Crítica",
-      architecture: "Arquitectura",
-      outcome: "Resultado",
+      outcome: "El Resultado",
       items: [
         {
           title: "Victoria Estrella (Romi Joyería)",
-          category: "Sistema de Control de Joyas | Par Digital",
-          problem: "Control de stock crítico para piezas de plata y moissanita con alta rotación. La gestión manual impedía el escalamiento del negocio.",
-          technical_decision: "Arquitectura distribuida con Firebase Realtime para sincronización instantánea en múltiples puntos de venta.",
-          architecture: "Sistema cloud-native optimizado para dispositivos móviles. Base de datos NoSQL con triggers para alertas de stock bajo.",
-          outcome: "Precisión absoluta en inventario. El sistema permitió a la dueña delegar la operación con confianza total en los datos.",
+          category: "Sistema de Control de Joyas",
+          problem: "Control de stock en cuadernos y WhatsApp. Ventas perdidas y descontrol en piezas de alta rotación.",
+          outcome: "Inventario digital exacto en tiempo real. Ahora el equipo opera solo y con total seguridad.",
         },
         {
           title: "LINTAC Access & Inventory",
-          category: "Gestión de Activos IT | Par Digital",
-          problem: "Institución con cientos de activos gestionados en Excel. Pérdida de trazabilidad y riesgos de seguridad en el control de acceso.",
-          technical_decision: "Centralización de procesos mediante Django Rest Framework y una capa de servicios desacoplada.",
-          architecture: "Dockerized monolithic architecture. PostgreSQL como fuente única de verdad con auditoría de cambios en tiempo real.",
-          outcome: "Trazabilidad del 100% del hardware. Reducción drástica en tiempos de auditoría interna y control de acceso unificado.",
+          category: "Gestión de Activos Institucionales",
+          problem: "Cientos de equipos TI perdidos en Excel desactualizados. Sin control de quién tenía qué computador.",
+          outcome: "Trazabilidad total del hardware. Auditorías resueltas en minutos y equipo de soporte ordenado.",
         },
         {
           title: "Dulzuras Nicky Nicole",
-          category: "E-Commerce de Proximidad | Par Digital",
-          problem: "Colapso en la atención vía WhatsApp y falta de catálogo visual autogestionable.",
-          technical_decision: "Validación de pedidos en Cloud Functions para reducir carga manual en el equipo de ventas.",
-          architecture: "SPA de alto rendimiento integrada con API de WhatsApp para flujo de conversión directo.",
-          outcome: "Digitalización total del catálogo. Aumento en el ticket promedio gracias a la facilidad del armado de pedidos digital.",
+          category: "Sistema de Pedidos E-Commerce",
+          problem: "Colapso en WhatsApp tomando pedidos manualmente. Horas invertidas solo en calcular totales.",
+          outcome: "Catálogo automatizado. Aumento en las ventas y cero tiempo perdido en atención manual.",
         }
       ]
     },
-    content: {
-      section_label: "Building in Public",
-      title1: "Proceso",
-      title2: "En Vivo.",
-      description: "Construyo cosas. Algunas funcionan, otras fallan. Aquí comparto el proceso real detrás de crear software y resolver problemas.",
-      status: "Status: Live",
-      card_title: "Documentando la realidad de crear software.",
-      card_desc: "No hay atajos mágicos. Muestro mis aciertos y errores diarios construyendo sistemas y manejando mi carrera independiente.",
-      cta_youtube: "Ver Diario en TikTok",
-      steps: [
-        { title: "Arquitectura Real", desc: "Mostrando los retos técnicos detrás de cada sistema que diseñamos." },
-        { title: "Gestión Freelance", desc: "Compartiendo la realidad de manejar proyectos de alto impacto de forma independiente." },
-        { title: "Innovación Retail", desc: "Explorando cómo la tecnología transforma negocios tradicionales como joyerías y e-commerce." }
-      ],
-      vision: [
-        { label: "Arquitectura Real", desc: "Resolviendo problemas de negocio con código, sin filtros ni atajos mágicos." },
-        { label: "El Día a Día", desc: "La realidad de la ingeniería de software, automatización y manejo de clientes." },
-        { label: "Diario de Desarrollo", desc: "Mis aciertos y errores mientras levanto proyectos y construyo mi carrera en tecnología." }
-      ]
-    },
-    approach: {
-      section_label: "Enfoque",
-      title1: "Ingeniería",
-      title2: "aplicada.",
-      description: "No escribimos código por escribir. Diseñamos sistemas que se convierten en el motor de crecimiento de tu empresa.",
-      items: [
-        { title: "Estrategia ByHijar", desc: "Entendimiento profundo del negocio antes de tocar una sola tecla. Diseño de sistemas con propósito comercial." },
-        { title: "Sello Par Digital", desc: "Software que no falla. Implementaciones con estándares de industria y cimientos escalables para los próximos 5 años." },
-        { title: "Foco en Resultados", desc: "Eliminamos el caos operativo (planillas, WhatsApp desordenado) y lo reemplazamos por claridad y automatización." },
-        { title: "Documentación Viva", desc: "Cada sistema viene con una narrativa técnica clara, permitiendo que el conocimiento sea accesible y no una caja negra." }
-      ]
-    },
-    trajectory: {
-      section_label: "Trayectoria",
-      title: "Manifiesto.",
-      manifesto_main: "ByHijar diseña la visión. Par Digital construye la realidad.",
-      p1: "En la intersección entre la narrativa digital y la ingeniería de software, he construido una firma que no solo entrega código, sino activos financieros. Mi enfoque personal bajo ByHijar garantiza que cada sistema entienda el pulso del mercado actual.",
-      p2: "Par Digital es mi brazo ejecutor: procesos refinados, estabilidad garantizada y una obsesión por la calidad. Si buscas un programador que desaparece, no somos nosotros. Si buscas cimientos para que tu negocio (como tu joyería) escale sin fricciones, has llegado al lugar indicado.",
-    },
-    tech: {
-      section_label: "Herramientas",
-      title: "Stack Técnico",
-      description: "El arsenal tecnológico que ByHijar y Par Digital utilizan para garantizar sistemas estables y de alto rendimiento.",
-      categories: ["Frontend", "Backend y Bases de Datos", "Gestión y Herramientas IT", "Diseño Gráfico", "Contenido & Producción"]
+    about: {
+      section_label: "Sobre Mí",
+      title: "El puente entre tu operación y la tecnología.",
+      p1: "Soy José Hijar, ingeniero informático. No vengo a hablarte de código ni servidores complejos.",
+      p2: "Mi trabajo es entender el caos de tu operación diaria y transformarlo en un sistema digital simple y escalable. Tú pones el negocio, yo pongo el orden tecnológico."
     },
     contact: {
-      section_label: "Solicitud",
-      title1: "Lleva tu negocio",
-      title2: "al siguiente nivel.",
-      description: "¿Tu operación está limitada por procesos manuales? Diseñemos el sistema que tu negocio necesita para escalar.",
-      scope_label: "Consultoría Especializada",
-      scope_items: ["Sistemas para Retail & Joyerías", "Automatización de Inventarios", "Arquitectura Cloud & APIs"],
-      chat_cta: "Consultoría Directa (WhatsApp)",
+      section_label: "Contacto",
+      title1: "Si tu negocio ya no cabe en una planilla,",
+      title2: "conversemos.",
+      description: "Agenda una llamada breve. Revisamos tu operación y vemos si un sistema a medida es el siguiente paso lógico.",
+      chat_cta: "Agendar Diagnóstico (WhatsApp)",
       labels: {
-        identity: "Identidad",
-        name_placeholder: "Nombre / Organización",
-        contact: "Contacto",
-        email_placeholder: "correo@organizacion.com",
-        context: "Contexto & Requerimiento",
-        message_placeholder: "Describe el problema. Si tienes una joyería o retail, cuéntame sobre tu gestión de stock actual.",
-        submit: "Enviar Solicitud",
-        sending: "Procesando Consulta...",
+        identity: "Nombre de tu Empresa",
+        name_placeholder: "Ej: Joyería Victoria",
+        contact: "Tu Correo",
+        email_placeholder: "correo@empresa.com",
+        context: "Contexto del Problema",
+        message_placeholder: "Ej: Pierdo 3 horas al día cuadrando la caja y no sé mi stock real.",
+        submit: "Solicitar Diagnóstico",
+        sending: "Enviando Solicitud...",
       },
       status: {
-        ok: "Solicitud recibida por el equipo. ByHijar analizará tu caso personalmente.",
-        error: "Error en el envío. Por favor contacta vía WhatsApp.",
+        ok: "Solicitud recibida. Te contactaré a la brevedad para agendar la sesión.",
+        error: "Error en el envío. Por favor contáctame directo vía WhatsApp.",
         captcha: "Verificación requerida para seguridad.",
       }
     },
     footer: {
-      builder: "ByHijar x Par Digital",
+      builder: "José Hijar — Sistemas Internos",
       location: "Santiago, Chile",
-      built_with: "Sistemas con criterio."
+      built_with: "Diseñado para escalar."
     }
   },
   en: {
     nav: {
+      home: "Home",
+      solutions: "Solutions",
+      method: "Method",
       projects: "Projects",
-      content: "Content",
-      approach: "Approach",
-      trajectory: "Manifesto",
-      tech: "Tech",
+      about: "About Me",
       contact: "Contact",
     },
     hero: {
-      subtitle1: "Systems with criteria.",
-      subtitle2: "Code with ",
-      intention: "intention",
-      description: "Software Engineering & Digital Narrative. Designing systems while documenting the process to raise technical standards.",
-      cta_view: "View Projects",
-      cta_talk: "Let's Talk",
+      title1: "Simple systems for businesses",
+      title2: "that have outgrown Excel.",
+      subtitle: "Custom systems to control your operations, reduce manual errors, and scale without relying on spreadsheets.",
+      cta_primary: "I want to organize my business",
+      cta_secondary: "See how I work",
+    },
+    problem: {
+      section_label: "The Problem",
+      title: "The chaos of growing.",
+      description: "Running on Excel and WhatsApp worked at first. Today, it holds you back:",
+      items: [
+        "Data lost between chats and spreadsheets.",
+        "Blind decisions without real-time numbers.",
+        "Manual errors that cost money.",
+        "Your time consumed by repetitive tasks."
+      ]
+    },
+    solutions: {
+      section_label: "Solutions",
+      title: "Order, control, and clarity.",
+      description: "I develop internal tools that automate your day-to-day. No technical jargon.",
+      items: [
+        { title: "Inventory & Stock", desc: "Exact product control and automatic low-stock alerts." },
+        { title: "Sales & Reports", desc: "Real-time metrics for quick, informed decision making." },
+        { title: "Customer Management", desc: "Purchase history and centralized database in one place." },
+        { title: "Automation", desc: "Zero manual tasks. 100% digital and frictionless workflows." }
+      ]
+    },
+    method: {
+      section_label: "Working Method",
+      title: "From chaos to an operating system.",
+      description: "An agile process, without technicalities, focused directly on business results.",
+      steps: [
+        { title: "Diagnosis", desc: "We identify the main bottleneck in your current operation." },
+        { title: "Design", desc: "I propose a simple system focused directly on solving that problem." },
+        { title: "Implementation", desc: "I build and deploy the tool without interrupting your daily routine." },
+        { title: "Training", desc: "Quick and effective training to ensure your team uses it." }
+      ],
+      recurrent: {
+        title: "Monthly Partnership",
+        desc: "Your business changes, the system too. I work with a subscription that includes support, improvements, and adjustments. We evolve together."
+      }
     },
     projects: {
-      title1: "Architectural",
-      title2: "Solutions.",
-      case_studies: "Case Studies by Par Digital",
-      view_prod: "View Live",
-      tech_label: "Technology",
+      section_label: "Real Projects",
+      title1: "Success",
+      title2: "Cases.",
+      case_studies: "Implemented Systems",
+      view_prod: "View Results",
       challenge: "The Challenge",
-      decision: "Critical Decision",
-      architecture: "Architecture",
-      outcome: "Outcome",
+      outcome: "The Outcome",
       items: [
         {
           title: "Victoria Estrella (Romi Jewelry)",
-          category: "Jewelry Control System | Par Digital",
-          problem: "Critical stock control for high-turnover silver and moissanite pieces. Manual management prevented business scaling.",
-          technical_decision: "Distributed architecture with Firebase Realtime for instant synchronization across multiple points of sale.",
-          architecture: "Cloud-native system optimized for mobile devices. NoSQL database with triggers for low stock alerts.",
-          outcome: "Absolute inventory accuracy. The system allowed the owner to delegate operations with total confidence in the data.",
+          category: "Jewelry Control System",
+          problem: "Stock control on notebooks and WhatsApp. Lost sales and chaos in high-turnover pieces.",
+          outcome: "Exact digital inventory in real time. The team now operates independently and securely.",
         },
         {
           title: "LINTAC Access & Inventory",
-          category: "IT Asset Management | Par Digital",
-          problem: "Institution with hundreds of assets managed in Excel. Loss of traceability and security risks in access control.",
-          technical_decision: "Process centralization via Django Rest Framework and a decoupled service layer.",
-          architecture: "Dockerized monolithic architecture. PostgreSQL as single source of truth with real-time audit logs.",
-          outcome: "100% hardware traceability. Drastic reduction in internal audit times and unified access control.",
+          category: "Institutional Asset Management",
+          problem: "Hundreds of IT assets lost in outdated Excels. No control over who had which computer.",
+          outcome: "Total hardware traceability. Audits resolved in minutes and an organized support team.",
         },
         {
           title: "Dulzuras Nicky Nicole",
-          category: "Proximity E-Commerce | Par Digital",
-          problem: "Collapse in WhatsApp customer service and lack of a self-managed visual catalog.",
-          technical_decision: "Order validation in Cloud Functions to reduce manual burden on the sales team.",
-          architecture: "High-performance SPA integrated with WhatsApp API for direct conversion flow.",
-          outcome: "100% catalog digitization. Increased average ticket thanks to the ease of digital order assembly.",
+          category: "E-Commerce Ordering System",
+          problem: "WhatsApp collapsed from taking manual orders. Hours spent just calculating totals.",
+          outcome: "Automated catalog. Increased sales and zero time wasted on manual customer service.",
         }
       ]
     },
-    content: {
-      section_label: "Building in Public",
-      title1: "Live",
-      title2: "Process.",
-      description: "I build things. Some work, some fail. Here I share the real process behind creating software and solving problems.",
-      status: "Status: Live",
-      card_title: "Documenting the reality of building software.",
-      card_desc: "No magic shortcuts. I show my daily wins and mistakes building systems and managing my independent career.",
-      cta_youtube: "Watch Journal on TikTok",
-      steps: [
-        { title: "Real Architecture", desc: "Showing the technical challenges behind every system we design." },
-        { title: "Freelance Management", desc: "Sharing the reality of managing high-impact projects independently." },
-        { title: "Retail Innovation", desc: "Exploring how technology transforms traditional businesses like jewelry and e-commerce." }
-      ],
-      vision: [
-        { label: "Real Architecture", desc: "Solving business problems with code, without filters or magic shortcuts." },
-        { label: "The Day-to-Day", desc: "The reality of software engineering, automation, and handling clients." },
-        { label: "Dev Journal", desc: "My wins and mistakes while bootstrapping projects and building a career in tech." }
-      ]
-    },
-    approach: {
-      section_label: "Approach",
-      title1: "Applied",
-      title2: "Engineering.",
-      description: "We don't write code for the sake of it. We design systems that become your company's growth engine.",
-      items: [
-        { title: "ByHijar Strategy", desc: "Deep business understanding before touching a single key. System design with commercial purpose." },
-        { title: "Par Digital Seal", desc: "Software that doesn't fail. Implementations with industry standards and scalable foundations for the next 5 years." },
-        { title: "Results Focused", desc: "We eliminate operational chaos (spreadsheets, messy WhatsApp) and replace it with clarity and automation." },
-        { title: "Living Documentation", desc: "Every system comes with a clear technical narrative, making knowledge accessible and not a black box." }
-      ]
-    },
-    trajectory: {
-      section_label: "Manifesto",
-      title: "Philosophy.",
-      manifesto_main: "ByHijar designs the vision. Par Digital builds the reality.",
-      p1: "At the intersection of digital narrative and software engineering, I have built a firm that delivers financial assets, not just code. My personal approach under ByHijar ensures each system understands today's market pulse.",
-      p2: "Par Digital is my execution arm: refined processes, guaranteed stability, and an obsession with quality. If you're looking for a programmer who disappears, that's not us. If you seek foundations for your business (like your jewelry) to scale frictionlessly, you've come to the right place.",
-    },
-    tech: {
-      section_label: "Tools",
-      title: "Technical Stack",
-      description: "The technological arsenal that ByHijar and Par Digital use to ensure stable and high-performance systems.",
-      categories: ["Frontend", "Backend & Databases", "IT Management & Tools", "Graphic Design", "Content & Production"]
+    about: {
+      section_label: "About Me",
+      title: "The bridge between your operations and tech.",
+      p1: "I'm José Hijar, software engineer. I'm not here to talk to you about code or complex servers.",
+      p2: "My job is to understand the chaos of your daily operations and transform it into a simple, scalable digital system. You provide the business, I provide the technological order."
     },
     contact: {
-      section_label: "Inquiry",
-      title1: "Take your business",
-      title2: "to the next level.",
-      description: "Is your operation limited by manual processes? Let's design the system your business needs to scale.",
-      scope_label: "Specialized Consulting",
-      scope_items: ["Retail & Jewelry Systems", "Inventory Automation", "Cloud Architecture & APIs"],
-      chat_cta: "Direct Consulting (WhatsApp)",
+      section_label: "Contact",
+      title1: "If your business outgrew spreadsheets,",
+      title2: "let's talk.",
+      description: "Schedule a brief call. We'll review your operation and see if a custom system is the next logical step.",
+      chat_cta: "Schedule Diagnosis (WhatsApp)",
       labels: {
-        identity: "Identity",
-        name_placeholder: "Name / Organization",
-        contact: "Contact",
-        email_placeholder: "email@organization.com",
-        context: "Context & Requirement",
-        message_placeholder: "Describe the problem. If you have a jewelry or retail business, tell me about your current stock management.",
-        submit: "Send Inquiry",
-        sending: "Processing Inquiry...",
+        identity: "Company Name",
+        name_placeholder: "e.g., Victoria Jewelry",
+        contact: "Your Email",
+        email_placeholder: "email@company.com",
+        context: "Problem Context",
+        message_placeholder: "e.g., I waste 3 hours a day balancing the register and don't know my real stock.",
+        submit: "Request Diagnosis",
+        sending: "Processing Request...",
       },
       status: {
-        ok: "Inquiry received. ByHijar will analyze your case personally.",
-        error: "Sending error. Please contact via WhatsApp.",
+        ok: "Request received. I will contact you shortly to schedule the session.",
+        error: "Sending error. Please contact me directly via WhatsApp.",
         captcha: "Verification required for security.",
       }
     },
     footer: {
-      builder: "ByHijar x Par Digital",
+      builder: "José Hijar — Internal Systems",
       location: "Santiago, Chile",
-      built_with: "Systems with criteria."
+      built_with: "Designed to scale."
     }
   }
 };

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaServer, FaDatabase, FaCogs } from "react-icons/fa";
+import { FaExternalLinkAlt, FaCheckCircle, FaExclamationTriangle } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
 
 export default function Proyectos() {
@@ -7,22 +7,16 @@ export default function Proyectos() {
   
   const staticProjects = [
     {
-      image: "/projects/lintac-access.png",
-      stack: ["Django Rest Framework", "PostgreSQL", "React", "Docker", "Nginx"],
-      link: null,
-      repo: null
+      image: "/projects/victoria-estrella.png",
+      link: "https://victoriaestrella.cl",
     },
     {
-      image: "/projects/victoria-estrella.png",
-      stack: ["React", "Firebase", "Netlify", "Tailwind CSS"],
-      link: "https://victoriaestrella.cl",
-      repo: null
+      image: "/projects/lintac-access.png",
+      link: null,
     },
     {
       image: null,
-      stack: ["React", "Tailwind CSS", "Firebase", "Vite"],
       link: "https://dulzurasnicky.cl",
-      repo: null
     }
   ];
 
@@ -38,7 +32,7 @@ export default function Proyectos() {
         {/* Editorial Section Header - Left Aligned */}
         <div className="mb-32 space-y-6 max-w-2xl">
           <div className="font-mono text-sm tracking-widest uppercase flex items-center gap-3">
-            <span className="text-editorial-meta">01</span>
+            <span className="text-editorial-meta">04</span>
             <span className="text-brand-red w-4 h-[1px] bg-brand-red inline-block"></span>
             <span className="text-editorial-secondary font-semibold">{t('projects.case_studies')}</span>
           </div>
@@ -92,17 +86,6 @@ export default function Proyectos() {
                   </h3>
                 </div>
 
-                <div className="space-y-2">
-                  <h4 className="text-xs font-bold text-editorial-meta uppercase tracking-widest mb-4">{t('projects.tech_label')}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.stack.map(tech => (
-                      <span key={tech} className="px-3 py-1 bg-gray-50 text-editorial-body text-xs font-medium border border-gray-100">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
                 {project.link && (
                   <div className="pt-4">
                     <a
@@ -120,35 +103,23 @@ export default function Proyectos() {
               {/* Right Column: Deep Dive (Asymmetric Width 7/12) */}
               <div className="lg:col-span-7 space-y-12 pt-4">
 
-                <div className="grid md:grid-cols-2 gap-12">
-                  <div className="space-y-3">
-                    <h4 className="text-sm font-bold text-editorial-secondary uppercase tracking-widest">{t('projects.challenge')}</h4>
-                    <p className="text-editorial-body text-base leading-relaxed">
+                <div className="space-y-12 bg-white p-8 md:p-12 border border-gray-100 shadow-sm">
+                  <div className="space-y-4">
+                    <h4 className="flex items-center gap-3 text-sm font-bold text-editorial-secondary uppercase tracking-widest">
+                      <FaExclamationTriangle className="text-brand-red" /> {t('projects.challenge')}
+                    </h4>
+                    <p className="text-editorial-body text-lg leading-relaxed">
                       {project.problem}
                     </p>
                   </div>
-                  <div className="space-y-3">
-                    <h4 className="text-sm font-bold text-editorial-secondary uppercase tracking-widest">{t('projects.decision')}</h4>
-                    <p className="text-editorial-body text-base leading-relaxed">
-                      {project.technical_decision}
-                    </p>
-                  </div>
-                </div>
+                  
+                  <div className="w-12 h-[1px] bg-gray-200"></div>
 
-                <div className="space-y-6 border-l-2 border-brand-red pl-8 py-2">
-                  <div className="space-y-2">
-                    <h4 className="flex items-center gap-2 text-sm font-bold text-editorial-secondary uppercase">
-                      <FaServer className="text-editorial-meta" /> {t('projects.architecture')}
+                  <div className="space-y-4">
+                    <h4 className="flex items-center gap-3 text-sm font-bold text-editorial-secondary uppercase tracking-widest">
+                      <FaCheckCircle className="text-green-600" /> {t('projects.outcome')}
                     </h4>
-                    <p className="text-editorial-body text-lg font-medium leading-relaxed">
-                      {project.architecture}
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="flex items-center gap-2 text-sm font-bold text-editorial-secondary uppercase">
-                      <FaDatabase className="text-editorial-meta" /> {t('projects.outcome')}
-                    </h4>
-                    <p className="text-editorial-body text-base leading-relaxed">
+                    <p className="text-editorial-primary text-lg font-medium leading-relaxed">
                       {project.outcome}
                     </p>
                   </div>

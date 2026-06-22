@@ -47,51 +47,50 @@ export default function Hero() {
             />
 
             <div className="overflow-hidden pb-2">
-              <motion.h1
-                className="text-6xl sm:text-7xl md:text-9xl font-bold text-editorial-primary tracking-tighter leading-[0.96] mb-6"
+              <motion.h1 
+                className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-editorial-primary tracking-tighter leading-[0.96] mb-6"
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, ease: "circOut" }}
               >
-                {t('hero.subtitle1')}
+                {t('hero.title1')}
               </motion.h1>
             </div>
 
             <div className="overflow-hidden pb-2">
-              <motion.h1
-                className="text-6xl sm:text-7xl md:text-9xl font-bold text-editorial-secondary tracking-tighter leading-[0.96]"
+              <motion.h1 
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-editorial-secondary tracking-tighter leading-[0.96]"
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: "circOut" }}
               >
-                {t('hero.subtitle2')} <span className="text-brand-red">{t('hero.intention')}</span>.
+                {t('hero.title2')}
               </motion.h1>
             </div>
           </div>
 
-          <motion.div
-            className="max-w-2xl ml-0 md:ml-24 pt-8 border-l-2 border-transparent md:border-gray-100 md:pl-8"
+          <motion.div 
+            className="max-w-3xl ml-0 md:ml-24 pt-8 border-l-2 border-transparent md:border-gray-100 md:pl-8"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
             <p className="text-xl md:text-2xl text-editorial-body font-medium leading-relaxed">
-              {t('hero.description')}
+              {t('hero.subtitle')}
             </p>
-
+            
             <div className="flex flex-col sm:flex-row gap-6 pt-12">
-              <a
-                href="#proyectos"
-                className="group flex items-center gap-3 text-editorial-primary font-bold text-lg hover:text-brand-red transition-colors"
+              <a 
+                href="#contacto" 
+                className="group flex items-center justify-center gap-3 bg-brand-red text-white px-8 py-4 font-bold text-lg hover:bg-red-800 transition-colors shadow-lg hover:shadow-xl"
               >
-                <span className="w-12 h-[2px] bg-brand-red group-hover:w-20 transition-all duration-300"></span>
-                {t('hero.cta_view')}
+                {t('hero.cta_primary')}
               </a>
-              <a
-                href="#contacto"
-                className="text-editorial-meta hover:text-editorial-primary transition-colors font-medium text-lg flex items-center gap-2"
+              <a 
+                href="#metodo" 
+                className="flex items-center justify-center gap-3 text-editorial-primary border border-gray-200 px-8 py-4 font-bold text-lg hover:border-brand-red hover:text-brand-red transition-colors"
               >
-                {t('hero.cta_talk')}
+                {t('hero.cta_secondary')}
               </a>
             </div>
           </motion.div>

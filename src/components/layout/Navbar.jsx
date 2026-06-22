@@ -44,22 +44,20 @@ export default function Navbar() {
   };
 
   const navLinks = [
+    { id: "#soluciones", label: t('nav.solutions'), sectionId: "soluciones" },
+    { id: "#metodo", label: t('nav.method'), sectionId: "metodo" },
     { id: "#proyectos", label: t('nav.projects'), sectionId: "proyectos" },
-    { id: "#enfoque", label: t('nav.approach'), sectionId: "enfoque" },
-    { id: "#contenido", label: t('nav.content'), sectionId: "contenido" },
-    { id: "#trayectoria", label: t('nav.trajectory'), sectionId: "trayectoria" },
-    { id: "#tech", label: t('nav.tech'), sectionId: "tech" },
+    { id: "#sobre-mi", label: t('nav.about'), sectionId: "sobre-mi" },
     { id: "#contacto", label: t('nav.contact'), sectionId: "contacto" },
   ];
 
   const getPageTitle = (section) => {
-    const base = 'ByHijar — System Builder';
+    const base = 'ByHijar — Sistemas Internos';
     switch (section) {
+      case 'soluciones': return `${t('nav.solutions')} | ByHijar`;
+      case 'metodo': return `${t('nav.method')} | ByHijar`;
       case 'proyectos': return `${t('nav.projects')} | ByHijar`;
-      case 'contenido': return `${t('nav.content')} | ByHijar`;
-      case 'enfoque': return `${t('nav.approach')} | ByHijar`;
-      case 'trayectoria': return `${t('nav.trajectory')} | ByHijar`;
-      case 'tech': return `${t('nav.tech')} | ByHijar`;
+      case 'sobre-mi': return `${t('nav.about')} | ByHijar`;
       case 'contacto': return `${t('nav.contact')} | ByHijar`;
       default: return base;
     }
