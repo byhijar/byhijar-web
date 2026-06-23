@@ -1,4 +1,4 @@
-import { FaYoutube, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
 
 export default function Footer() {
@@ -15,21 +15,17 @@ export default function Footer() {
           <p className="text-xs text-gray-400">{t('footer.location')}</p>
         </div>
 
-        {/* Right: Technical Context & Social */}
+        {/* Right: Social */}
         <div className="md:col-span-2 flex flex-col md:flex-row justify-end items-start md:items-center gap-8 md:gap-16">
-          <div className="text-left md:text-right">
-            <p className="font-mono text-xs uppercase tracking-wider text-gray-400 font-bold mb-2">Core Stack</p>
-            <p className="text-sm font-medium text-gray-600">Django & DRF / React / PostgreSQL</p>
-          </div>
           <div className="flex gap-6 text-xl">
-            <a href="#" className="text-gray-400 hover:text-brand-red transition-colors duration-300">
-              <FaYoutube />
+            <a href="https://www.instagram.com/byhijar/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-brand-red transition-colors duration-300">
+              <FaInstagram />
             </a>
-            <a href="#" className="text-gray-400 hover:text-brand-red transition-colors duration-300">
+            <a href="https://www.tiktok.com/@byhijar" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-brand-red transition-colors duration-300">
+              <FaTiktok />
+            </a>
+            <a href="https://www.linkedin.com/in/jose-hijar-127727247/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-brand-red transition-colors duration-300">
               <FaLinkedin />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-brand-red transition-colors duration-300">
-              <FaGithub />
             </a>
           </div>
         </div>
