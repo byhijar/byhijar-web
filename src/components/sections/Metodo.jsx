@@ -68,7 +68,7 @@ export default function Metodo() {
               href="#contacto" 
               className="inline-block bg-white text-gray-900 px-6 py-3 font-bold text-sm uppercase tracking-widest hover:bg-brand-red hover:text-white transition-colors"
             >
-              Hablemos del futuro
+              {t('method.recurrent.cta')}
             </a>
           </div>
         </motion.div>

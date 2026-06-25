@@ -104,7 +104,7 @@ export default function ContactoForm() {
 
           <div className="space-y-8 border-t border-gray-200 pt-8">
             <p className="text-lg text-editorial-body font-medium">
-              Te ayudaré a entender exactamente dónde está tu cuello de botella y si un sistema a medida es la solución adecuada para ti en este momento. Sin compromisos.
+              {t('contact.diagnostic_promise')}
             </p>
           </div>
 

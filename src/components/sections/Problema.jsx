@@ -79,7 +79,7 @@ export default function Problema() {
             {/* Error Overlay */}
             <div className="absolute inset-0 bg-brand-red/5 flex items-center justify-center backdrop-blur-[1px] rounded-2xl border border-brand-red/20">
               <div className="bg-white px-6 py-3 shadow-lg border-l-4 border-brand-red text-editorial-primary font-bold text-sm uppercase tracking-wider flex items-center gap-3">
-                <span className="text-brand-red animate-pulse">●</span> Sistema Colapsado
+                <span className="text-brand-red animate-pulse">●</span> {t('problem.error_overlay')}
               </div>
             </div>
           </motion.div>

@@ -24,7 +24,8 @@ export const translations = {
         "Decisiones a ciegas, sin números reales.",
         "Errores manuales que cuestan dinero.",
         "Tu tiempo consumido en tareas repetitivas."
-      ]
+      ],
+      error_overlay: "Sistema Colapsado"
     },
     solutions: {
       section_label: "Soluciones",
@@ -49,7 +50,8 @@ export const translations = {
       ],
       recurrent: {
         title: "Acompañamiento Mensual",
-        desc: "Tu negocio cambia, el sistema también. Trabajo con una suscripción que incluye soporte, mejoras y ajustes continuos. Evolucionamos juntos."
+        desc: "Tu negocio cambia, el sistema también. Trabajo con una suscripción que incluye soporte, mejoras y ajustes continuos. Evolucionamos juntos.",
+        cta: "Hablemos del futuro"
       }
     },
     projects: {
@@ -92,6 +94,7 @@ export const translations = {
       title1: "Si tu negocio ya no cabe en una planilla,",
       title2: "conversemos.",
       description: "Agenda una llamada breve. Revisamos tu operación y vemos si un sistema a medida es el siguiente paso lógico.",
+      diagnostic_promise: "Te ayudaré a entender exactamente dónde está tu cuello de botella y si un sistema a medida es la solución adecuada para ti en este momento. Sin compromisos.",
       chat_cta: "Agendar Diagnóstico (WhatsApp)",
       labels: {
         identity: "Nombre de tu Empresa",
@@ -140,7 +143,8 @@ export const translations = {
         "Blind decisions without real-time numbers.",
         "Manual errors that cost money.",
         "Your time consumed by repetitive tasks."
-      ]
+      ],
+      error_overlay: "System Collapsed"
     },
     solutions: {
       section_label: "Solutions",
@@ -165,7 +169,8 @@ export const translations = {
       ],
       recurrent: {
         title: "Monthly Partnership",
-        desc: "Your business changes, the system too. I work with a subscription that includes support, improvements, and adjustments. We evolve together."
+        desc: "Your business changes, the system too. I work with a subscription that includes support, improvements, and adjustments. We evolve together.",
+        cta: "Let's talk about the future"
       }
     },
     projects: {
@@ -208,6 +213,7 @@ export const translations = {
       title1: "If your business outgrew spreadsheets,",
       title2: "let's talk.",
       description: "Schedule a brief call. We'll review your operation and see if a custom system is the next logical step.",
+      diagnostic_promise: "I will help you understand exactly where your bottleneck is and if a custom system is the right solution for you right now. No commitments.",
       chat_cta: "Schedule Diagnosis (WhatsApp)",
       labels: {
         identity: "Company Name",
