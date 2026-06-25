@@ -13,11 +13,11 @@ export default function Soluciones() {
   ];
 
   return (
-    <section id="soluciones" className="bg-editorial-bg py-32 px-6 md:px-12 border-b border-gray-100">
+    <section id="soluciones" className="bg-editorial-bg py-20 md:py-32 px-6 md:px-12 border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
-        <div className="mb-20 max-w-3xl">
+        <div className="mb-12 md:mb-20 max-w-3xl">
           <div className="font-mono text-sm tracking-widest uppercase flex items-center gap-3 mb-6">
             <span className="text-editorial-meta">02</span>
             <span className="text-brand-red w-4 h-[1px] bg-brand-red inline-block"></span>

@@ -6,11 +6,11 @@ export default function Metodo() {
   const { t } = useLanguage();
 
   return (
-    <section id="metodo" className="bg-white py-32 px-6 md:px-12 border-b border-gray-100">
+    <section id="metodo" className="bg-white py-20 md:py-32 px-6 md:px-12 border-b border-gray-100">
       <div className="max-w-5xl mx-auto">
         
         {/* Header */}
-        <div className="mb-20 text-center max-w-3xl mx-auto">
+        <div className="mb-12 md:mb-20 text-center max-w-3xl mx-auto">
           <div className="font-mono text-sm tracking-widest uppercase flex items-center justify-center gap-3 mb-6">
             <span className="text-editorial-meta">03</span>
             <span className="text-brand-red w-4 h-[1px] bg-brand-red inline-block"></span>
@@ -25,7 +25,7 @@ export default function Metodo() {
         </div>
 
         {/* Steps Timeline */}
-        <div className="relative border-l border-brand-red/20 pl-8 md:pl-12 space-y-16 ml-4 md:ml-0 mb-24">
+        <div className="relative border-l border-brand-red/20 pl-8 md:pl-12 space-y-16 ml-4 md:ml-0 mb-16 md:mb-24">
           {t('method.steps').map((step, index) => (
             <motion.div 
               key={index}
@@ -50,12 +50,12 @@ export default function Metodo() {
 
         {/* Recurrent Model Highlight */}
         <motion.div 
-          className="bg-gray-900 text-white p-10 md:p-16 rounded-2xl shadow-2xl relative overflow-hidden"
+          className="bg-gray-900 text-white p-6 md:p-16 rounded-2xl shadow-2xl relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="absolute -right-20 -top-20 text-brand-red/10 text-[200px]">
+          <div className="absolute -right-32 -top-32 md:-right-20 md:-top-20 text-white/5 md:text-brand-red/10 text-[250px] md:text-[200px] pointer-events-none">
             <FaSyncAlt />
           </div>
           <div className="relative z-10 max-w-2xl">

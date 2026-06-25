@@ -26,22 +26,22 @@ export default function Proyectos() {
   }));
 
   return (
-    <section id="proyectos" className="bg-editorial-bg py-32 px-6 md:px-12 text-editorial-body border-b border-gray-100">
+    <section id="proyectos" className="bg-editorial-bg py-20 md:py-32 px-6 md:px-12 text-editorial-body border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
 
         {/* Editorial Section Header - Left Aligned */}
-        <div className="mb-32 space-y-6 max-w-2xl">
+        <div className="mb-16 md:mb-32 space-y-6 max-w-2xl">
           <div className="font-mono text-sm tracking-widest uppercase flex items-center gap-3">
             <span className="text-editorial-meta">04</span>
             <span className="text-brand-red w-4 h-[1px] bg-brand-red inline-block"></span>
             <span className="text-editorial-secondary font-semibold">{t('projects.case_studies')}</span>
           </div>
-          <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-editorial-primary leading-[0.9]">
+          <h2 className="text-4xl md:text-8xl font-bold tracking-tighter text-editorial-primary leading-[0.9]">
             {t('projects.title1')} <br /> <span className="text-editorial-body font-normal">{t('projects.title2')}</span>
           </h2>
         </div>
 
-        <div className="space-y-40">
+        <div className="space-y-24 md:space-y-40">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -81,7 +81,7 @@ export default function Proyectos() {
                   <span className="text-brand-red font-mono text-xs uppercase tracking-wider font-bold block mb-4">
                     {project.category}
                   </span>
-                  <h3 className="text-4xl md:text-5xl font-bold text-editorial-primary leading-none tracking-tight">
+                  <h3 className="text-3xl md:text-5xl font-bold text-editorial-primary leading-none tracking-tight">
                     {project.title}
                   </h3>
                 </div>
@@ -103,7 +103,7 @@ export default function Proyectos() {
               {/* Right Column: Deep Dive (Asymmetric Width 7/12) */}
               <div className="lg:col-span-7 space-y-12 pt-4">
 
-                <div className="space-y-12 bg-white p-8 md:p-12 border border-gray-100 shadow-sm">
+                <div className="space-y-12 bg-white p-6 md:p-12 border border-gray-100 shadow-sm">
                   <div className="space-y-4">
                     <h4 className="flex items-center gap-3 text-sm font-bold text-editorial-secondary uppercase tracking-widest">
                       <FaExclamationTriangle className="text-brand-red" /> {t('projects.challenge')}

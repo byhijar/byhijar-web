@@ -8,7 +8,7 @@ export default function Problema() {
   const icons = [<FaRegFileExcel />, <FaWhatsapp />, <FaBrain />, <FaRegFileExcel />];
 
   return (
-    <section id="problema" className="bg-white py-32 px-6 md:px-12 border-b border-gray-100">
+    <section id="problema" className="bg-white py-20 md:py-32 px-6 md:px-12 border-b border-gray-100">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         
         {/* Left: Text */}

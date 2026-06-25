@@ -48,7 +48,7 @@ export default function Hero() {
 
             <div className="overflow-hidden pb-2">
               <motion.h1 
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-editorial-primary tracking-tighter leading-[0.96] mb-6"
+                className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-editorial-primary tracking-tighter leading-[0.96] mb-6"
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, ease: "circOut" }}
@@ -59,7 +59,7 @@ export default function Hero() {
 
             <div className="overflow-hidden pb-2">
               <motion.h1 
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-editorial-secondary tracking-tighter leading-[0.96]"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-editorial-secondary tracking-tighter leading-[0.96]"
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: "circOut" }}

@@ -6,8 +6,8 @@ export default function SobreMi() {
   const { t } = useLanguage();
 
   return (
-    <section id="sobre-mi" className="bg-editorial-bg py-32 px-6 md:px-12 border-b border-gray-100">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <section id="sobre-mi" className="bg-editorial-bg py-20 md:py-32 px-6 md:px-12 border-b border-gray-100">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         
         {/* Left: Image / Visual */}
         <div className="relative">
@@ -40,7 +40,7 @@ export default function SobreMi() {
           </div>
           
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold tracking-tighter text-editorial-primary leading-[1.1]"
+            className="text-3xl md:text-5xl font-bold tracking-tighter text-editorial-primary leading-[1.1]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
