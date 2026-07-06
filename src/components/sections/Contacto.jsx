@@ -108,16 +108,7 @@ export default function ContactoForm() {
             </p>
           </div>
 
-          <div className="pt-4">
-            <a
-              href="https://wa.me/56945955335"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-3 text-brand-red font-bold hover:text-red-800 transition-colors text-lg"
-            >
-              <FaWhatsapp className="text-xl" /> {t('contact.chat_cta')}
-            </a>
-          </div>
+          {/* Botón de WhatsApp eliminado a favor del formulario de aplicación exclusivo */}
         </div>
 
         {/* Right Column: Lineal Form */}
