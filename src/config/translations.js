@@ -2,239 +2,239 @@ export const translations = {
   es: {
     nav: {
       home: "Inicio",
-      solutions: "Soluciones",
-      method: "Método",
-      projects: "Proyectos",
+      solutions: "Sistemas",
+      method: "Partnership",
+      projects: "Casos",
       about: "Sobre Mí",
-      contact: "Contacto",
+      contact: "Aplicar",
     },
     hero: {
-      title1: "Sistemas simples para negocios",
-      title2: "que ya crecieron demasiado para seguir usando Excel.",
-      subtitle: "Sistemas a medida para controlar tu operación, reducir errores manuales y escalar sin depender de planillas.",
-      cta_primary: "Quiero ordenar mi negocio",
+      title1: "No necesitas más seguidores.",
+      title2: "Necesitas infraestructura para monetizarlos.",
+      subtitle: "Me asocio con creadores y coaches para construir sus plataformas de suscripción y automatizar sus ventas. Tú creas el contenido, yo escalo tu tecnología.",
+      cta_primary: "Aplicar como Partner",
       cta_secondary: "Ver cómo trabajo",
     },
     problem: {
-      section_label: "El Problema",
-      title: "El caos de crecer.",
-      description: "Operar con Excel y WhatsApp funcionaba al principio. Hoy, ese desorden te frena:",
+      section_label: "El Cuello de Botella",
+      title: "Mucho tráfico, pero el sistema está roto.",
+      description: "Tener audiencia ya no es suficiente. Si operas con herramientas desconectadas, estás dejando dinero sobre la mesa:",
       items: [
-        "Datos perdidos entre chats y planillas.",
-        "Decisiones a ciegas, sin números reales.",
-        "Errores manuales que cuestan dinero.",
-        "Tu tiempo consumido en tareas repetitivas."
+        "Pagas comisiones abusivas a plataformas de terceros (Patreon, Hotmart).",
+        "Usas 5 herramientas distintas (Linktree, Discord, Stripe) que no se comunican.",
+        "Vendes o gestionas accesos por DM de forma manual.",
+        "Cero datos de retención: no sabes por qué cancelan tus suscriptores."
       ],
       error_overlay: "Sistema Colapsado"
     },
     solutions: {
-      section_label: "Soluciones",
-      title: "Orden, control y claridad.",
-      description: "Desarrollo herramientas internas que automatizan tu día a día. Sin tecnicismos.",
+      section_label: "La Infraestructura",
+      title: "Control total, cero comisiones.",
+      description: "Construyo tu propia infraestructura tecnológica. Eres dueño de tu plataforma, tus datos y tus ganancias.",
       items: [
-        { title: "Inventario y Stock", desc: "Control exacto de tus productos y alertas automáticas de escasez." },
-        { title: "Ventas y Reportes", desc: "Métricas en tiempo real para tomar decisiones rápidas e informadas." },
-        { title: "Gestión de Clientes", desc: "Historial de compras y base de datos centralizada en un solo lugar." },
-        { title: "Automatización", desc: "Cero tareas manuales. Flujos 100% digitales y sin fricción." }
+        { title: "Áreas Privadas Propias", desc: "Plataformas de membresía y cursos 100% tuyas. Olvídate de pagar el 10% a terceros." },
+        { title: "Embudos Automatizados", desc: "Sistemas que convierten tu tráfico de redes en ventas 24/7, sin intervención manual." },
+        { title: "Dashboards de Retención", desc: "Métricas exactas de Churn, LTV y MRR. Toma decisiones basadas en números reales." },
+        { title: "Operación Invisible", desc: "Conecto pagos, correos y tu comunidad (Discord/WhatsApp) en un ecosistema automático." }
       ]
     },
     method: {
-      section_label: "Método de Trabajo",
-      title: "Del caos a un sistema operando.",
-      description: "Un proceso ágil, sin tecnicismos y enfocado directamente en resultados comerciales.",
+      section_label: "Modelo de Partnership",
+      title: "No soy una agencia. Soy tu CTO a pedido.",
+      description: "No te cobro por hacer una web y desaparecer. Opero bajo modelos donde gano si tú ganas.",
       steps: [
-        { title: "Diagnóstico", desc: "Identificamos el principal cuello de botella de tu operación actual." },
-        { title: "Diseño", desc: "Propongo un sistema simple y enfocado directamente en resolver ese problema." },
-        { title: "Implementación", desc: "Construyo y despliego la herramienta sin interrumpir tu día a día." },
-        { title: "Capacitación", desc: "Entrenamiento rápido y efectivo para asegurar que tu equipo lo use." }
+        { title: "Auditoría de Conversión", desc: "Analizamos dónde estás perdiendo dinero hoy y qué herramienta está frenando tu escala." },
+        { title: "Migración y Setup", desc: "Te saco de plataformas costosas y construyo tu propia infraestructura optimizada." },
+        { title: "Automatización", desc: "Conectamos todo tu ecosistema para que el alta y baja de usuarios funcione en piloto automático." },
+        { title: "Growth Engine", desc: "Iteramos la plataforma cada mes basados en los datos de comportamiento de tus suscriptores." }
       ],
       recurrent: {
-        title: "Acompañamiento Mensual",
-        desc: "Tu negocio cambia, el sistema también. Trabajo con una suscripción que incluye soporte, mejoras y ajustes continuos. Evolucionamos juntos.",
-        cta: "Hablemos del futuro"
+        title: "Growth Partnership",
+        desc: "Trabajo bajo Revenue Share (vamos a riesgo compartido a cambio de un %) o con un Retainer Fijo Mensual. Soy el motor técnico detrás de tu marca personal.",
+        cta: "Aplicar para trabajar juntos"
       }
     },
     projects: {
-      section_label: "Proyectos Reales",
-      title1: "Casos",
-      title2: "de Éxito.",
-      case_studies: "Sistemas implementados",
+      section_label: "Casos Reales",
+      title1: "Escalando",
+      title2: "Operaciones.",
+      case_studies: "Proyectos Destacados",
       view_prod: "Ver Resultados",
       challenge: "El Desafío",
       outcome: "El Resultado",
       items: [
         {
           title: "Victoria Estrella (Romi Joyería)",
-          category: "Sistema de Control de Joyas",
-          problem: "Control de stock en cuadernos y WhatsApp. Ventas perdidas y descontrol en piezas de alta rotación.",
-          outcome: "Inventario digital exacto en tiempo real. Ahora el equipo opera solo y con total seguridad.",
+          category: "Social Commerce & Inventario",
+          problem: "Ventas masivas generadas por tráfico de TikTok que colapsaban la operación manual en cuadernos. Caos en el stock de alta rotación.",
+          outcome: "Infraestructura digital exacta y en tiempo real. Ahora el contenido en TikTok convierte directo a ventas sin cuellos de botella manuales.",
         },
         {
-          title: "LINTAC Access & Inventory",
-          category: "Gestión de Activos Institucionales",
-          problem: "Cientos de equipos TI perdidos en Excel desactualizados. Sin control de quién tenía qué computador.",
-          outcome: "Trazabilidad total del hardware. Auditorías resueltas en minutos y equipo de soporte ordenado.",
+          title: "Plataforma de Suscripción (Ejemplo)",
+          category: "Membresía & Área Privada",
+          problem: "Un coach perdiendo el 15% de su facturación mensual en plataformas de terceros y sin control sobre los datos de sus clientes.",
+          outcome: "Migración a plataforma propia con Stripe. Aumento del MRR y control total de la base de datos sin pagar comisiones por venta.",
         },
         {
           title: "Dulzuras Nicky Nicole",
-          category: "Sistema de Pedidos E-Commerce",
-          problem: "Colapso en WhatsApp tomando pedidos manualmente. Horas invertidas solo en calcular totales.",
-          outcome: "Catálogo automatizado. Aumento en las ventas y cero tiempo perdido en atención manual.",
+          category: "Automatización de E-Commerce",
+          problem: "Colapso total en WhatsApp al lanzar nuevos productos. Horas invertidas solo en calcular totales y gestionar pedidos por DM.",
+          outcome: "Flujo automatizado 100%. Todo el tráfico de Instagram se convierte de forma automática, recuperando tiempo valioso.",
         }
       ]
     },
     about: {
-      section_label: "Sobre Mí",
-      title: "El puente entre tu operación y la tecnología.",
-      p1: "Soy José Hijar, ingeniero informático. No vengo a hablarte de código ni servidores complejos.",
-      p2: "Mi trabajo es entender el caos de tu operación diaria y transformarlo en un sistema digital simple y escalable. Tú pones el negocio, yo pongo el orden tecnológico."
+      section_label: "Tu Socio Tecnológico",
+      title: "El puente entre tu audiencia y tus ingresos.",
+      p1: "Soy José Hijar, ingeniero informático. No trabajo como una agencia tradicional. Opero como un Partner Estratégico para creadores que ya validaron su producto pero su tecnología no acompaña su crecimiento.",
+      p2: "Mi objetivo es construir sistemas que actúen como activos de tu negocio. Tú traes la audiencia y el contenido; yo me aseguro de que la tecnología convierta y retenga ese tráfico."
     },
     contact: {
-      section_label: "Contacto",
-      title1: "Si tu negocio ya no cabe en una planilla,",
-      title2: "conversemos.",
-      description: "Agenda una llamada breve. Revisamos tu operación y vemos si un sistema a medida es el siguiente paso lógico.",
-      diagnostic_promise: "Te ayudaré a entender exactamente dónde está tu cuello de botella y si un sistema a medida es la solución adecuada para ti en este momento. Sin compromisos.",
-      chat_cta: "Agendar Diagnóstico (WhatsApp)",
+      section_label: "Aplicación",
+      title1: "Busco asociarme con",
+      title2: "2 creadores este trimestre.",
+      description: "Para garantizar el enfoque y resultados, mi capacidad es muy limitada. Si ya generas ingresos y buscas escalar tu infraestructura, aplica abajo.",
+      diagnostic_promise: "En nuestra primera llamada (sin costo), evaluaremos tu arquitectura actual y te diré exactamente cuánto dinero estás dejando sobre la mesa por fricciones técnicas.",
+      chat_cta: "Enviar Aplicación (WhatsApp)",
       labels: {
-        identity: "Nombre de tu Empresa",
-        name_placeholder: "Ej: Joyería Victoria",
+        identity: "Nombre de tu Marca/Canal",
+        name_placeholder: "Ej: @MaxCoach",
         contact: "Tu Correo",
-        email_placeholder: "correo@empresa.com",
-        context: "Contexto del Problema",
-        message_placeholder: "Ej: Pierdo 3 horas al día cuadrando la caja y no sé mi stock real.",
-        submit: "Solicitar Diagnóstico",
-        sending: "Enviando Solicitud...",
+        email_placeholder: "correo@creador.com",
+        context: "¿Qué vendes y dónde está tu tráfico?",
+        message_placeholder: "Ej: Vendo mentorías por IG, tengo 50k seguidores pero me toma horas vender por DM.",
+        submit: "Aplicar para Partnership",
+        sending: "Enviando Aplicación...",
       },
       status: {
-        ok: "Solicitud recibida. Te contactaré a la brevedad para agendar la sesión.",
+        ok: "Aplicación recibida. Te escribiré a la brevedad para agendar nuestra evaluación.",
         error: "Error en el envío. Por favor contáctame directo vía WhatsApp.",
         captcha: "Verificación requerida para seguridad.",
       }
     },
     footer: {
-      builder: "José Hijar — Sistemas Internos",
+      builder: "José Hijar — Tech & Growth Partner",
       location: "Santiago, Chile",
-      built_with: "Diseñado para escalar."
+      built_with: "Infraestructura para Creadores."
     }
   },
   en: {
     nav: {
       home: "Home",
-      solutions: "Solutions",
-      method: "Method",
-      projects: "Projects",
+      solutions: "Systems",
+      method: "Partnership",
+      projects: "Cases",
       about: "About Me",
-      contact: "Contact",
+      contact: "Apply",
     },
     hero: {
-      title1: "Simple systems for businesses",
-      title2: "that have outgrown Excel.",
-      subtitle: "Custom systems to control your operations, reduce manual errors, and scale without relying on spreadsheets.",
-      cta_primary: "I want to organize my business",
+      title1: "You don't need more followers.",
+      title2: "You need infrastructure to monetize them.",
+      subtitle: "I partner with creators and coaches to build their subscription platforms and automate sales. You create the content, I scale your technology.",
+      cta_primary: "Apply as a Partner",
       cta_secondary: "See how I work",
     },
     problem: {
-      section_label: "The Problem",
-      title: "The chaos of growing.",
-      description: "Running on Excel and WhatsApp worked at first. Today, it holds you back:",
+      section_label: "The Bottleneck",
+      title: "High traffic, broken systems.",
+      description: "Having an audience is no longer enough. If you operate with disconnected tools, you are leaving money on the table:",
       items: [
-        "Data lost between chats and spreadsheets.",
-        "Blind decisions without real-time numbers.",
-        "Manual errors that cost money.",
-        "Your time consumed by repetitive tasks."
+        "Paying abusive fees to third-party platforms (Patreon, Hotmart).",
+        "Using 5 different tools (Linktree, Discord, Stripe) that don't communicate.",
+        "Selling or managing access manually via DMs.",
+        "Zero retention data: you don't know why your subscribers cancel."
       ],
       error_overlay: "System Collapsed"
     },
     solutions: {
-      section_label: "Solutions",
-      title: "Order, control, and clarity.",
-      description: "I develop internal tools that automate your day-to-day. No technical jargon.",
+      section_label: "The Infrastructure",
+      title: "Total control, zero commissions.",
+      description: "I build your own tech infrastructure. You own your platform, your data, and your profits.",
       items: [
-        { title: "Inventory & Stock", desc: "Exact product control and automatic low-stock alerts." },
-        { title: "Sales & Reports", desc: "Real-time metrics for quick, informed decision making." },
-        { title: "Customer Management", desc: "Purchase history and centralized database in one place." },
-        { title: "Automation", desc: "Zero manual tasks. 100% digital and frictionless workflows." }
+        { title: "Custom Memberships", desc: "Private platforms and courses that are 100% yours. Stop paying 10% to third parties." },
+        { title: "Automated Funnels", desc: "Systems that convert your social traffic into sales 24/7, hands-free." },
+        { title: "Retention Dashboards", desc: "Exact metrics for Churn, LTV, and MRR. Make decisions based on real numbers." },
+        { title: "Invisible Operations", desc: "I connect your payments, emails, and community (Discord/Slack) into an automated ecosystem." }
       ]
     },
     method: {
-      section_label: "Working Method",
-      title: "From chaos to an operating system.",
-      description: "An agile process, without technicalities, focused directly on business results.",
+      section_label: "Partnership Model",
+      title: "I'm not an agency. I'm your CTO on demand.",
+      description: "I don't charge for making a website and disappear. I operate under models where I win if you win.",
       steps: [
-        { title: "Diagnosis", desc: "We identify the main bottleneck in your current operation." },
-        { title: "Design", desc: "I propose a simple system focused directly on solving that problem." },
-        { title: "Implementation", desc: "I build and deploy the tool without interrupting your daily routine." },
-        { title: "Training", desc: "Quick and effective training to ensure your team uses it." }
+        { title: "Conversion Audit", desc: "We analyze where you are losing money today and what tool is slowing your scale." },
+        { title: "Migration & Setup", desc: "I pull you out of expensive platforms and build your own optimized infrastructure." },
+        { title: "Automation", desc: "We connect your entire ecosystem so onboarding and offboarding work on autopilot." },
+        { title: "Growth Engine", desc: "We iterate the platform every month based on your subscribers' behavior data." }
       ],
       recurrent: {
-        title: "Monthly Partnership",
-        desc: "Your business changes, the system too. I work with a subscription that includes support, improvements, and adjustments. We evolve together.",
-        cta: "Let's talk about the future"
+        title: "Growth Partnership",
+        desc: "I work on a Revenue Share basis (shared risk for a %) or a fixed monthly Retainer. I am the technical engine behind your personal brand.",
+        cta: "Apply to work together"
       }
     },
     projects: {
-      section_label: "Real Projects",
-      title1: "Success",
-      title2: "Cases.",
-      case_studies: "Implemented Systems",
+      section_label: "Real Cases",
+      title1: "Scaling",
+      title2: "Operations.",
+      case_studies: "Featured Projects",
       view_prod: "View Results",
       challenge: "The Challenge",
       outcome: "The Outcome",
       items: [
         {
           title: "Victoria Estrella (Romi Jewelry)",
-          category: "Jewelry Control System",
-          problem: "Stock control on notebooks and WhatsApp. Lost sales and chaos in high-turnover pieces.",
-          outcome: "Exact digital inventory in real time. The team now operates independently and securely.",
+          category: "Social Commerce & Inventory",
+          problem: "Massive sales generated by TikTok traffic collapsed their manual notebook operations. Chaos in high-turnover stock.",
+          outcome: "Exact, real-time digital infrastructure. Now TikTok content converts directly to sales without manual bottlenecks.",
         },
         {
-          title: "LINTAC Access & Inventory",
-          category: "Institutional Asset Management",
-          problem: "Hundreds of IT assets lost in outdated Excels. No control over who had which computer.",
-          outcome: "Total hardware traceability. Audits resolved in minutes and an organized support team.",
+          title: "Subscription Platform (Example)",
+          category: "Membership & Private Area",
+          problem: "A coach losing 15% of their monthly revenue to third-party platforms with no control over customer data.",
+          outcome: "Migration to a custom platform with Stripe. Increased MRR and total control of the database without paying sales commissions.",
         },
         {
           title: "Dulzuras Nicky Nicole",
-          category: "E-Commerce Ordering System",
-          problem: "WhatsApp collapsed from taking manual orders. Hours spent just calculating totals.",
-          outcome: "Automated catalog. Increased sales and zero time wasted on manual customer service.",
+          category: "E-Commerce Automation",
+          problem: "Total collapse on WhatsApp when launching new products. Hours wasted calculating totals and managing DM orders.",
+          outcome: "100% automated flow. All Instagram traffic converts automatically, recovering valuable time.",
         }
       ]
     },
     about: {
-      section_label: "About Me",
-      title: "The bridge between your operations and tech.",
-      p1: "I'm José Hijar, software engineer. I'm not here to talk to you about code or complex servers.",
-      p2: "My job is to understand the chaos of your daily operations and transform it into a simple, scalable digital system. You provide the business, I provide the technological order."
+      section_label: "Your Tech Partner",
+      title: "The bridge between your audience and your income.",
+      p1: "I'm José Hijar, a software engineer. I don't work like a traditional agency. I operate as a Strategic Partner for creators who have validated their product but their tech isn't keeping up with their growth.",
+      p2: "My goal is to build systems that act as assets for your business. You bring the audience and the content; I ensure the technology converts and retains that traffic."
     },
     contact: {
-      section_label: "Contact",
-      title1: "If your business outgrew spreadsheets,",
-      title2: "let's talk.",
-      description: "Schedule a brief call. We'll review your operation and see if a custom system is the next logical step.",
-      diagnostic_promise: "I will help you understand exactly where your bottleneck is and if a custom system is the right solution for you right now. No commitments.",
-      chat_cta: "Schedule Diagnosis (WhatsApp)",
+      section_label: "Application",
+      title1: "I'm looking to partner with",
+      title2: "2 creators this quarter.",
+      description: "To ensure focus and results, my capacity is very limited. If you already generate revenue and want to scale your infrastructure, apply below.",
+      diagnostic_promise: "On our first (free) call, we will evaluate your current architecture and I'll tell you exactly how much money you are leaving on the table due to technical friction.",
+      chat_cta: "Send Application (WhatsApp)",
       labels: {
-        identity: "Company Name",
-        name_placeholder: "e.g., Victoria Jewelry",
+        identity: "Brand / Channel Name",
+        name_placeholder: "e.g., @MaxCoach",
         contact: "Your Email",
-        email_placeholder: "email@company.com",
-        context: "Problem Context",
-        message_placeholder: "e.g., I waste 3 hours a day balancing the register and don't know my real stock.",
-        submit: "Request Diagnosis",
-        sending: "Processing Request...",
+        email_placeholder: "email@creator.com",
+        context: "What do you sell & where is your traffic?",
+        message_placeholder: "e.g., I sell mentoring via IG, I have 50k followers but it takes hours to sell via DM.",
+        submit: "Apply for Partnership",
+        sending: "Sending Application...",
       },
       status: {
-        ok: "Request received. I will contact you shortly to schedule the session.",
+        ok: "Application received. I will write to you shortly to schedule our evaluation.",
         error: "Sending error. Please contact me directly via WhatsApp.",
         captcha: "Verification required for security.",
       }
     },
     footer: {
-      builder: "José Hijar — Internal Systems",
+      builder: "José Hijar — Tech & Growth Partner",
       location: "Santiago, Chile",
-      built_with: "Designed to scale."
+      built_with: "Infrastructure for Creators."
     }
   }
 };

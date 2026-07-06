@@ -11,7 +11,7 @@ export default function Proyectos() {
       link: "https://victoriaestrella.cl",
     },
     {
-      image: "/projects/lintac-access.png",
+      image: null,
       link: null,
     },
     {

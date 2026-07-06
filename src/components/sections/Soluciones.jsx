@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
-import { FaBoxOpen, FaChartLine, FaUsers, FaCogs } from "react-icons/fa";
+import { FaUsers, FaFilter, FaChartLine, FaCogs } from "react-icons/fa";
 
 export default function Soluciones() {
   const { t } = useLanguage();
 
   const icons = [
-    <FaBoxOpen className="text-3xl text-brand-red mb-6" />,
-    <FaChartLine className="text-3xl text-brand-red mb-6" />,
     <FaUsers className="text-3xl text-brand-red mb-6" />,
+    <FaFilter className="text-3xl text-brand-red mb-6" />,
+    <FaChartLine className="text-3xl text-brand-red mb-6" />,
     <FaCogs className="text-3xl text-brand-red mb-6" />
   ];
 

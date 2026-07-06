@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
-import { FaRegFileExcel, FaWhatsapp, FaBrain } from "react-icons/fa";
+import { FaPatreon, FaDiscord, FaStripe, FaRegComments } from "react-icons/fa";
 
 export default function Problema() {
   const { t } = useLanguage();
 
-  const icons = [<FaRegFileExcel />, <FaWhatsapp />, <FaBrain />, <FaRegFileExcel />];
+  const icons = [<FaPatreon />, <FaDiscord />, <FaStripe />, <FaRegComments />];
 
   return (
     <section id="problema" className="bg-white py-20 md:py-32 px-6 md:px-12 border-b border-gray-100">
