@@ -9,49 +9,49 @@ export const translations = {
       contact: "Aplicar",
     },
     hero: {
-      title1: "No necesitas más seguidores.",
-      title2: "Necesitas infraestructura para monetizarlos.",
-      subtitle: "Me asocio con creadores y coaches para construir sus plataformas de suscripción y automatizar sus ventas. Tú creas el contenido, yo escalo tu tecnología.",
-      cta_primary: "Aplicar como Partner",
+      title1: "Tienes la audiencia.",
+      title2: "Hagamos que tu negocio escale de verdad.",
+      subtitle: "Me asocio con creadores y coaches para construir sus plataformas y automatizar sus ventas. Tú pones tu magia creando contenido, y yo me encargo de que la tecnología trabaje a tu favor.",
+      cta_primary: "Hablemos de tu proyecto",
       cta_secondary: "Ver cómo trabajo",
     },
     problem: {
-      section_label: "El Cuello de Botella",
-      title: "Mucho tráfico, pero el sistema está roto.",
-      description: "Tener audiencia ya no es suficiente. Si operas con herramientas desconectadas, estás dejando dinero sobre la mesa:",
+      section_label: "El Desafío",
+      title: "Crecer a veces trae dolores de cabeza.",
+      description: "Es normal: empiezas a tener éxito, pero si usas demasiadas herramientas desconectadas, el día a día se vuelve pesado y pierdes dinero sin darte cuenta:",
       items: [
-        "Pagas comisiones abusivas a plataformas de terceros (Patreon, Hotmart).",
-        "Usas 5 herramientas distintas (Linktree, Discord, Stripe) que no se comunican.",
-        "Vendes o gestionas accesos por DM de forma manual.",
-        "Cero datos de retención: no sabes por qué cancelan tus suscriptores."
+        "Pagas comisiones muy altas a otras plataformas (Patreon, Hotmart).",
+        "Usas 5 herramientas distintas (Linktree, Discord, Stripe) que no se hablan entre sí.",
+        "Pasas horas respondiendo DMs para vender o dar accesos.",
+        "Te falta claridad: no estás seguro de por qué algunos suscriptores se van."
       ],
-      error_overlay: "Sistema Colapsado"
+      error_overlay: "Podría ser más fácil"
     },
     solutions: {
-      section_label: "La Infraestructura",
-      title: "Control total, cero comisiones.",
-      description: "Construyo tu propia infraestructura tecnológica. Eres dueño de tu plataforma, tus datos y tus ganancias.",
+      section_label: "La Solución",
+      title: "Tu casa, tus reglas.",
+      description: "Armo la infraestructura tecnológica a tu medida. Tú eres el dueño de tu plataforma, de tu comunidad y de tus ingresos. Sin intermediarios.",
       items: [
-        { title: "Áreas Privadas Propias", desc: "Plataformas de membresía y cursos 100% tuyas. Olvídate de pagar el 10% a terceros." },
-        { title: "Embudos Automatizados", desc: "Sistemas que convierten tu tráfico de redes en ventas 24/7, sin intervención manual." },
-        { title: "Dashboards de Retención", desc: "Métricas exactas de Churn, LTV y MRR. Toma decisiones basadas en números reales." },
-        { title: "Operación Invisible", desc: "Conecto pagos, correos y tu comunidad (Discord/WhatsApp) en un ecosistema automático." }
+        { title: "Áreas Privadas 100% Tuyas", desc: "Plataformas de membresía y cursos bajo tu propio dominio. Olvídate de regalar ese 10%." },
+        { title: "Embudos en Automático", desc: "Sistemas amigables que guían a tus seguidores a convertirse en clientes mientras duermes." },
+        { title: "Claridad en tus Números", desc: "Dashboards simples para ver tus ingresos reales (MRR) y tomar decisiones más tranquilas." },
+        { title: "Ecosistema Conectado", desc: "Unimos tus pagos, correos y comunidad (Discord/WhatsApp) para que todo fluya solo." }
       ]
     },
     method: {
-      section_label: "Modelo de Partnership",
-      title: "No soy una agencia. Soy tu CTO a pedido.",
-      description: "No te cobro por hacer una web y desaparecer. Opero bajo modelos donde gano si tú ganas.",
+      section_label: "Cómo Trabajo",
+      title: "Más que una agencia, tu socio técnico.",
+      description: "No soy de los que arman una web y desaparecen. Me gusta involucrarme, buscar soluciones donde ganemos todos y crecer a tu lado.",
       steps: [
-        { title: "Auditoría de Conversión", desc: "Analizamos dónde estás perdiendo dinero hoy y qué herramienta está frenando tu escala." },
-        { title: "Migración y Setup", desc: "Te saco de plataformas costosas y construyo tu propia infraestructura optimizada." },
-        { title: "Automatización", desc: "Conectamos todo tu ecosistema para que el alta y baja de usuarios funcione en piloto automático." },
-        { title: "Growth Engine", desc: "Iteramos la plataforma cada mes basados en los datos de comportamiento de tus suscriptores." }
+        { title: "Diagnóstico Relajado", desc: "Nos tomamos un café virtual, miramos qué está frenando tus ventas y vemos si hacemos buen match." },
+        { title: "Migración y Diseño", desc: "Mudamos tu contenido de forma segura y creamos tu propia casa digital, súper optimizada." },
+        { title: "Todo Conectado", desc: "Dejamos los flujos listos para que tus nuevos alumnos o suscriptores entren sin que muevas un dedo." },
+        { title: "Crecimiento Continuo", desc: "Mes a mes, revisamos juntos los números y ajustamos la plataforma para que retengas más clientes." }
       ],
       recurrent: {
-        title: "Growth Partnership",
-        desc: "Trabajo bajo Revenue Share (vamos a riesgo compartido a cambio de un %) o con un Retainer Fijo Mensual. Soy el motor técnico detrás de tu marca personal.",
-        cta: "Aplicar para trabajar juntos"
+        title: "Partnership a Medida",
+        desc: "Podemos trabajar juntos bajo Revenue Share (un % de lo que te ayude a ganar extra) o un plan fijo. La idea es que la tecnología deje de ser un problema y se vuelva tu mejor aliada.",
+        cta: "Conversemos sobre tu marca"
       }
     },
     projects: {
@@ -84,27 +84,27 @@ export const translations = {
       ]
     },
     about: {
-      section_label: "Tu Socio Tecnológico",
-      title: "El puente entre tu audiencia y tus ingresos.",
-      p1: "Soy José Hijar, ingeniero informático. No trabajo como una agencia tradicional. Opero como un Partner Estratégico para creadores que ya validaron su producto pero su tecnología no acompaña su crecimiento.",
-      p2: "Mi objetivo es construir sistemas que actúen como activos de tu negocio. Tú traes la audiencia y el contenido; yo me aseguro de que la tecnología convierta y retenga ese tráfico."
+      section_label: "El Compañero de Ruta",
+      title: "El puente entre tu comunidad y tus ingresos.",
+      p1: "Soy José Hijar, ingeniero de software. Me encanta ver cómo los creadores impactan con su contenido, y decidí que mi forma de aportar es quitarles el dolor de cabeza tecnológico.",
+      p2: "Mi objetivo es armarte un sistema que sea un activo real para tu marca. Tú pones tu carisma y conocimiento, y yo me encargo de que los fierros técnicos no te fallen nunca."
     },
     contact: {
-      section_label: "Aplicación",
-      title1: "Busco asociarme con",
-      title2: "2 creadores este trimestre.",
-      description: "Para garantizar el enfoque y resultados, mi capacidad es muy limitada. Si ya generas ingresos y buscas escalar tu infraestructura, aplica abajo.",
-      diagnostic_promise: "En nuestra primera llamada (sin costo), evaluaremos tu arquitectura actual y te diré exactamente cuánto dinero estás dejando sobre la mesa por fricciones técnicas.",
-      chat_cta: "Enviar Aplicación (WhatsApp)",
+      section_label: "Hablemos",
+      title1: "Me encanta enfocarme 100% ",
+      title2: "en poquitos proyectos.",
+      description: "Por eso tomo solo a 2 creadores nuevos cada trimestre. Si tienes un proyecto bonito andando y crees que la tecnología podría ayudarte a escalar sin estrés, escribeme.",
+      diagnostic_promise: "En una charlita corta vemos cómo está armada tu operativa hoy y te doy mi opinión súper honesta de si te conviene armar algo propio ahora mismo.",
+      chat_cta: "Escribirme al WhatsApp",
       labels: {
-        identity: "Nombre de tu Marca/Canal",
+        identity: "Tu Nombre o Marca",
         name_placeholder: "Ej: @MaxCoach",
         contact: "Tu Correo",
         email_placeholder: "correo@creador.com",
-        context: "¿Qué vendes y dónde está tu tráfico?",
-        message_placeholder: "Ej: Vendo mentorías por IG, tengo 50k seguidores pero me toma horas vender por DM.",
-        submit: "Aplicar para Partnership",
-        sending: "Enviando Aplicación...",
+        context: "Cuéntame un poco de tu comunidad",
+        message_placeholder: "Ej: Doy clases de guitarra en IG, tengo hartos alumnos pero venderles 1 a 1 por mensaje me tiene agotado.",
+        submit: "Enviar Mensaje",
+        sending: "Enviando...",
       },
       status: {
         ok: "Aplicación recibida. Te escribiré a la brevedad para agendar nuestra evaluación.",
@@ -128,49 +128,49 @@ export const translations = {
       contact: "Apply",
     },
     hero: {
-      title1: "You don't need more followers.",
-      title2: "You need infrastructure to monetize them.",
-      subtitle: "I partner with creators and coaches to build their subscription platforms and automate sales. You create the content, I scale your technology.",
-      cta_primary: "Apply as a Partner",
+      title1: "You have the audience.",
+      title2: "Let's make your business truly scale.",
+      subtitle: "I partner with creators and coaches to build their platforms and automate their sales. You bring your magic creating content, and I make technology work in your favor.",
+      cta_primary: "Let's talk about your project",
       cta_secondary: "See how I work",
     },
     problem: {
-      section_label: "The Bottleneck",
-      title: "High traffic, broken systems.",
-      description: "Having an audience is no longer enough. If you operate with disconnected tools, you are leaving money on the table:",
+      section_label: "The Challenge",
+      title: "Growing sometimes brings headaches.",
+      description: "It's normal: you start succeeding, but using too many disconnected tools makes the day-to-day heavy and you lose money without noticing:",
       items: [
-        "Paying abusive fees to third-party platforms (Patreon, Hotmart).",
-        "Using 5 different tools (Linktree, Discord, Stripe) that don't communicate.",
-        "Selling or managing access manually via DMs.",
-        "Zero retention data: you don't know why your subscribers cancel."
+        "Paying very high fees to other platforms (Patreon, Hotmart).",
+        "Using 5 different tools (Linktree, Discord, Stripe) that don't talk to each other.",
+        "Spending hours replying to DMs to sell or give access.",
+        "Lacking clarity: you're not sure why some subscribers leave."
       ],
-      error_overlay: "System Collapsed"
+      error_overlay: "It could be easier"
     },
     solutions: {
-      section_label: "The Infrastructure",
-      title: "Total control, zero commissions.",
-      description: "I build your own tech infrastructure. You own your platform, your data, and your profits.",
+      section_label: "The Solution",
+      title: "Your house, your rules.",
+      description: "I build a tech infrastructure tailored to you. You own your platform, your community, and your income. No middlemen.",
       items: [
-        { title: "Custom Memberships", desc: "Private platforms and courses that are 100% yours. Stop paying 10% to third parties." },
-        { title: "Automated Funnels", desc: "Systems that convert your social traffic into sales 24/7, hands-free." },
-        { title: "Retention Dashboards", desc: "Exact metrics for Churn, LTV, and MRR. Make decisions based on real numbers." },
-        { title: "Invisible Operations", desc: "I connect your payments, emails, and community (Discord/Slack) into an automated ecosystem." }
+        { title: "100% Yours Private Areas", desc: "Membership platforms and courses under your own domain. Forget about giving away that 10%." },
+        { title: "Automated Funnels", desc: "Friendly systems that guide your followers to become clients while you sleep." },
+        { title: "Clarity in Your Numbers", desc: "Simple dashboards to see your real income (MRR) and make calmer decisions." },
+        { title: "Connected Ecosystem", desc: "We merge your payments, emails, and community (Discord/WhatsApp) so everything flows smoothly." }
       ]
     },
     method: {
-      section_label: "Partnership Model",
-      title: "I'm not an agency. I'm your CTO on demand.",
-      description: "I don't charge for making a website and disappear. I operate under models where I win if you win.",
+      section_label: "How I Work",
+      title: "More than an agency, your tech partner.",
+      description: "I'm not the type to build a website and disappear. I like to get involved, find win-win solutions, and grow by your side.",
       steps: [
-        { title: "Conversion Audit", desc: "We analyze where you are losing money today and what tool is slowing your scale." },
-        { title: "Migration & Setup", desc: "I pull you out of expensive platforms and build your own optimized infrastructure." },
-        { title: "Automation", desc: "We connect your entire ecosystem so onboarding and offboarding work on autopilot." },
-        { title: "Growth Engine", desc: "We iterate the platform every month based on your subscribers' behavior data." }
+        { title: "Relaxed Diagnosis", desc: "We have a virtual coffee, look at what's slowing down your sales, and see if we're a good match." },
+        { title: "Migration & Design", desc: "We safely move your content and create your own highly-optimized digital home." },
+        { title: "Everything Connected", desc: "We leave the flows ready so your new students or subscribers can enter without you lifting a finger." },
+        { title: "Continuous Growth", desc: "Month by month, we review the numbers together and adjust the platform so you retain more clients." }
       ],
       recurrent: {
-        title: "Growth Partnership",
-        desc: "I work on a Revenue Share basis (shared risk for a %) or a fixed monthly Retainer. I am the technical engine behind your personal brand.",
-        cta: "Apply to work together"
+        title: "Tailored Partnership",
+        desc: "We can work together on a Revenue Share basis (a % of the extra income I help you make) or a fixed plan. The idea is that technology stops being a problem and becomes your best ally.",
+        cta: "Let's talk about your brand"
       }
     },
     projects: {
@@ -203,27 +203,27 @@ export const translations = {
       ]
     },
     about: {
-      section_label: "Your Tech Partner",
-      title: "The bridge between your audience and your income.",
-      p1: "I'm José Hijar, a software engineer. I don't work like a traditional agency. I operate as a Strategic Partner for creators who have validated their product but their tech isn't keeping up with their growth.",
-      p2: "My goal is to build systems that act as assets for your business. You bring the audience and the content; I ensure the technology converts and retains that traffic."
+      section_label: "Your Co-Pilot",
+      title: "The bridge between your community and your income.",
+      p1: "I'm José Hijar, software engineer. I love seeing creators make an impact with their content, and I decided my way to contribute is by taking away their tech headaches.",
+      p2: "My goal is to build a system that is a real asset for your brand. You bring your charisma and knowledge, and I make sure the technical gears never fail you."
     },
     contact: {
-      section_label: "Application",
-      title1: "I'm looking to partner with",
-      title2: "2 creators this quarter.",
-      description: "To ensure focus and results, my capacity is very limited. If you already generate revenue and want to scale your infrastructure, apply below.",
-      diagnostic_promise: "On our first (free) call, we will evaluate your current architecture and I'll tell you exactly how much money you are leaving on the table due to technical friction.",
-      chat_cta: "Send Application (WhatsApp)",
+      section_label: "Let's Talk",
+      title1: "I love focusing 100%",
+      title2: "on just a few projects.",
+      description: "That's why I only take on 2 new creators each quarter. If you have a beautiful project running and think tech could help you scale stress-free, write to me.",
+      diagnostic_promise: "In a quick chat, we'll see how your operations are set up today, and I'll give you my super honest opinion on whether it makes sense to build something of your own right now.",
+      chat_cta: "Message me on WhatsApp",
       labels: {
-        identity: "Brand / Channel Name",
+        identity: "Your Name or Brand",
         name_placeholder: "e.g., @MaxCoach",
         contact: "Your Email",
         email_placeholder: "email@creator.com",
-        context: "What do you sell & where is your traffic?",
-        message_placeholder: "e.g., I sell mentoring via IG, I have 50k followers but it takes hours to sell via DM.",
-        submit: "Apply for Partnership",
-        sending: "Sending Application...",
+        context: "Tell me a bit about your community",
+        message_placeholder: "e.g., I teach guitar on IG, I have many students but selling 1-on-1 via DM is exhausting.",
+        submit: "Send Message",
+        sending: "Sending...",
       },
       status: {
         ok: "Application received. I will write to you shortly to schedule our evaluation.",
