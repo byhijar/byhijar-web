@@ -70,10 +70,10 @@ export const translations = {
           outcome: "Infraestructura digital exacta y en tiempo real. Ahora el contenido en TikTok convierte directo a ventas sin cuellos de botella manuales.",
         },
         {
-          title: "Plataforma de Suscripción (Ejemplo)",
+          title: "Max Coach (Mentoría Fitness)",
           category: "Membresía & Área Privada",
-          problem: "Un coach perdiendo el 15% de su facturación mensual en plataformas de terceros y sin control sobre los datos de sus clientes.",
-          outcome: "Migración a plataforma propia con Stripe. Aumento del MRR y control total de la base de datos sin pagar comisiones por venta.",
+          problem: "Un coach perdiendo el 15% de su facturación mensual en plataformas de terceros y gestionando a sus alumnos manualmente por DM.",
+          outcome: "Migración a plataforma propia con Stripe. Aumento del MRR y control total de su comunidad privada sin pagar comisiones por venta.",
         },
         {
           title: "Dulzuras Nicky Nicole",
@@ -189,10 +189,10 @@ export const translations = {
           outcome: "Exact, real-time digital infrastructure. Now TikTok content converts directly to sales without manual bottlenecks.",
         },
         {
-          title: "Subscription Platform (Example)",
+          title: "Max Coach (Fitness Mentoring)",
           category: "Membership & Private Area",
-          problem: "A coach losing 15% of their monthly revenue to third-party platforms with no control over customer data.",
-          outcome: "Migration to a custom platform with Stripe. Increased MRR and total control of the database without paying sales commissions.",
+          problem: "A coach losing 15% of their monthly revenue to third-party platforms and managing students manually via DMs.",
+          outcome: "Migration to a custom platform with Stripe. Increased MRR and total control of their private community without paying sales commissions.",
         },
         {
           title: "Dulzuras Nicky Nicole",
