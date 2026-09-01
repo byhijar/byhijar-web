@@ -33,19 +33,24 @@ export default function Problema() {
           </p>
           
           <ul className="space-y-4 pt-4">
-            {t('problem.items').map((item, index) => (
-              <motion.li 
-                key={index}
-                className="flex items-start gap-4 text-editorial-secondary text-lg"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <span className="text-brand-red mt-1 flex-shrink-0">✖</span>
-                <span>{item}</span>
-              </motion.li>
-            ))}
+            {t('problem.items').map((item, index) => {
+              const [strongPart, restPart] = item.split(': ');
+              return (
+                <motion.li 
+                  key={index}
+                  className="flex items-start gap-4 text-editorial-secondary text-lg"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <span className="text-brand-red mt-1 flex-shrink-0">✖</span>
+                  <span>
+                    <strong>{strongPart}:</strong> {restPart}
+                  </span>
+                </motion.li>
+              );
+            })}
           </ul>
         </div>
 

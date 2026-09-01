@@ -19,8 +19,8 @@ export default function SobreMi() {
           >
             {/* Si tienes una foto tuya profesional y seria, reemplaza el src */}
             <img 
-              src="/creator_studio_thumbnail.png" 
-              alt="José Hijar" 
+              src="/img/jose2.jpg" 
+              alt="Leo Híjar" 
               className="w-full h-full object-cover"
             />
           </motion.div>

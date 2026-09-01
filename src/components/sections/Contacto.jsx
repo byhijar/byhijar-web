@@ -102,11 +102,6 @@ export default function ContactoForm() {
             </p>
           </div>
 
-          <div className="space-y-8 border-t border-gray-200 pt-8">
-            <p className="text-lg text-editorial-body font-medium">
-              {t('contact.diagnostic_promise')}
-            </p>
-          </div>
 
           {/* Botón de WhatsApp eliminado a favor del formulario de aplicación exclusivo */}
         </div>

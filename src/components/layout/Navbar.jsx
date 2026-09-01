@@ -44,19 +44,17 @@ export default function Navbar() {
   };
 
   const navLinks = [
+    { id: "#problema", label: t('nav.problem'), sectionId: "problema" },
     { id: "#soluciones", label: t('nav.solutions'), sectionId: "soluciones" },
-    { id: "#metodo", label: t('nav.method'), sectionId: "metodo" },
-    { id: "#proyectos", label: t('nav.projects'), sectionId: "proyectos" },
     { id: "#sobre-mi", label: t('nav.about'), sectionId: "sobre-mi" },
     { id: "#contacto", label: t('nav.contact'), sectionId: "contacto" },
   ];
 
   const getPageTitle = (section) => {
-    const base = 'ByHijar — Sistemas Internos';
+    const base = 'ByHijar — Automatización E-commerce';
     switch (section) {
+      case 'problema': return `${t('nav.problem')} | ByHijar`;
       case 'soluciones': return `${t('nav.solutions')} | ByHijar`;
-      case 'metodo': return `${t('nav.method')} | ByHijar`;
-      case 'proyectos': return `${t('nav.projects')} | ByHijar`;
       case 'sobre-mi': return `${t('nav.about')} | ByHijar`;
       case 'contacto': return `${t('nav.contact')} | ByHijar`;
       default: return base;

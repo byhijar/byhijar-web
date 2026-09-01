@@ -46,6 +46,12 @@ export default function Hero() {
               style={{ originY: 0 }}
             />
 
+            <div className="mb-6 inline-block bg-brand-red/10 border border-brand-red/20 px-4 py-1.5 rounded-full md:ml-0">
+              <span className="text-brand-red font-bold text-xs md:text-sm uppercase tracking-widest">
+                {t('hero.badge')}
+              </span>
+            </div>
+
             <div className="overflow-hidden pb-2">
               <motion.h1 
                 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-editorial-primary tracking-tighter leading-[0.96] mb-6"
@@ -81,13 +87,13 @@ export default function Hero() {
             
             <div className="flex flex-col sm:flex-row gap-6 pt-12">
               <a 
-                href="#contacto" 
+                href="#soluciones" 
                 className="group flex items-center justify-center gap-3 bg-brand-red text-white px-8 py-4 font-bold text-lg hover:bg-red-800 transition-colors shadow-lg hover:shadow-xl"
               >
                 {t('hero.cta_primary')}
               </a>
               <a 
-                href="#metodo" 
+                href="#contacto" 
                 className="flex items-center justify-center gap-3 text-editorial-primary border border-gray-200 px-8 py-4 font-bold text-lg hover:border-brand-red hover:text-brand-red transition-colors"
               >
                 {t('hero.cta_secondary')}

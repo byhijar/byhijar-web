@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
-import { FaUsers, FaFilter, FaChartLine, FaCogs } from "react-icons/fa";
+import { FaRobot, FaSync, FaCogs } from "react-icons/fa";
 
 export default function Soluciones() {
   const { t } = useLanguage();
 
   const icons = [
-    <FaUsers className="text-3xl text-brand-red mb-6" />,
-    <FaFilter className="text-3xl text-brand-red mb-6" />,
-    <FaChartLine className="text-3xl text-brand-red mb-6" />,
+    <FaRobot className="text-3xl text-brand-red mb-6" />,
+    <FaSync className="text-3xl text-brand-red mb-6" />,
     <FaCogs className="text-3xl text-brand-red mb-6" />
   ];
 
@@ -31,24 +30,43 @@ export default function Soluciones() {
           </p>
         </div>
 
-        {/* Modules Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Modules Grid - 3 Columns */}
+        <div className="grid md:grid-cols-3 gap-8">
           {t('solutions.items').map((item, index) => (
             <motion.div 
               key={index}
-              className="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-white p-8 border border-gray-100 shadow-sm flex flex-col justify-between"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="group-hover:scale-110 transition-transform duration-300 origin-left">
-                {icons[index]}
+              <div>
+                <div className="mb-2">
+                  {icons[index]}
+                </div>
+                <h3 className="text-2xl font-bold text-editorial-primary mb-4 leading-tight">{item.title}</h3>
+                <p className="text-editorial-body leading-relaxed text-md mb-6">
+                  {item.desc}
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-editorial-meta mb-1">Incluye:</h4>
+                    <p className="text-sm text-editorial-primary font-medium">{item.includes}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-editorial-meta mb-1">Ideal para:</h4>
+                    <p className="text-sm text-brand-red font-medium">{item.idealFor}</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-editorial-primary mb-4">{item.title}</h3>
-              <p className="text-editorial-body leading-relaxed text-sm">
-                {item.desc}
-              </p>
+              
+              <div className="pt-6 border-t border-gray-100">
+                <a href="#contacto" className="text-sm font-bold uppercase tracking-widest text-editorial-primary hover:text-brand-red transition-colors inline-flex items-center gap-2">
+                  Agendar Demo <span className="text-brand-red">→</span>
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>

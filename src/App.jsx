@@ -2,8 +2,7 @@ import { motion } from 'framer-motion';
 import Hero from './components/sections/Hero';
 import Problema from './components/sections/Problema';
 import Soluciones from './components/sections/Soluciones';
-import Metodo from './components/sections/Metodo';
-import Proyectos from './components/sections/Proyectos';
+
 import SobreMi from './components/sections/SobreMi';
 import Contacto from './components/sections/Contacto';
 import Navbar from './components/layout/Navbar';
@@ -28,14 +27,6 @@ function App() {
 
         <section id="soluciones" aria-label="Soluciones">
           <Soluciones />
-        </section>
-
-        <section id="metodo" aria-label="Método">
-          <Metodo />
-        </section>
-
-        <section id="proyectos" aria-label="Proyectos">
-          <Proyectos />
         </section>
 
         <section id="sobre-mi" aria-label="Sobre Mí">
