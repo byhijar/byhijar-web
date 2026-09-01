@@ -63,8 +63,13 @@ export default function Soluciones() {
               </div>
               
               <div className="pt-6 border-t border-gray-100">
-                <a href="#contacto" className="text-sm font-bold uppercase tracking-widest text-editorial-primary hover:text-brand-red transition-colors inline-flex items-center gap-2">
-                  Agendar Demo <span className="text-brand-red">→</span>
+                <a 
+                  href={index === 0 ? "https://liveclose.byhijar.cl" : "#contacto"} 
+                  target={index === 0 ? "_blank" : undefined}
+                  rel={index === 0 ? "noopener noreferrer" : undefined}
+                  className="text-sm font-bold uppercase tracking-widest text-editorial-primary hover:text-brand-red transition-colors inline-flex items-center gap-2"
+                >
+                  {index === 0 ? "Probar Demo LiveClose" : "Agendar Demo"} <span className="text-brand-red">→</span>
                 </a>
               </div>
             </motion.div>

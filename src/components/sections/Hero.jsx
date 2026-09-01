@@ -93,7 +93,9 @@ export default function Hero() {
                 {t('hero.cta_primary')}
               </a>
               <a 
-                href="#contacto" 
+                href="https://liveclose.byhijar.cl" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 text-editorial-primary border border-gray-200 px-8 py-4 font-bold text-lg hover:border-brand-red hover:text-brand-red transition-colors"
               >
                 {t('hero.cta_secondary')}
