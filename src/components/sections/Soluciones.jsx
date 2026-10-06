@@ -46,6 +46,11 @@ export default function Soluciones() {
                   {icons[index]}
                 </div>
                 <h3 className="text-2xl font-bold text-editorial-primary mb-4 leading-tight">{item.title}</h3>
+                {item.price && (
+                  <div className="mb-4 inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    {item.price}
+                  </div>
+                )}
                 <p className="text-editorial-body leading-relaxed text-md mb-6">
                   {item.desc}
                 </p>
@@ -64,12 +69,12 @@ export default function Soluciones() {
               
               <div className="pt-6 border-t border-gray-100">
                 <a 
-                  href={index === 0 ? "https://liveclose.byhijar.cl" : "#contacto"} 
+                  href={index === 0 ? "https://wizeclose.byhijar.cl" : "#contacto"} 
                   target={index === 0 ? "_blank" : undefined}
                   rel={index === 0 ? "noopener noreferrer" : undefined}
                   className="text-sm font-bold uppercase tracking-widest text-editorial-primary hover:text-brand-red transition-colors inline-flex items-center gap-2"
                 >
-                  {index === 0 ? "Probar Demo LiveClose" : "Agendar Demo"} <span className="text-brand-red">→</span>
+                  {index === 0 ? "Probar Demo Wize Close" : "Agendar Demo"} <span className="text-brand-red">→</span>
                 </a>
               </div>
             </motion.div>

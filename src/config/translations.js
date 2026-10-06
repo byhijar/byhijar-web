@@ -32,10 +32,11 @@ export const translations = {
       description: "Soluciones claras, con entregables definidos y listas para integrarse a tu operativa.",
       items: [
         { 
-          title: "LiveClose AI – Cierre Automático en WhatsApp", 
-          desc: "Bot de ventas inteligente que guía al cliente, toma sus datos de envío, lee el comprobante de transferencia bancaria y envía el pedido al panel listo para despachar.",
-          includes: "Conexión directa por WhatsApp QR, catálogo interactivo, validación OCR/IA de comprobantes y dashboard de pedidos en tiempo real.",
-          idealFor: "Tiendas de Instagram, TikTok Lives y marcas con ventas por chat."
+          title: "Wize Close AI – Asistente de Agendamiento", 
+          price: "$14.990 CLP / mes (Oferta Cyber)",
+          desc: "Asistente inteligente de WhatsApp 24/7 sincronizado con Google Calendar para agendar citas y atender clientes de servicios en automático.",
+          includes: "Conexión directa por WhatsApp QR, lectura de calendario en tiempo real, validación de horarios disponibles y dashboard de gestión.",
+          idealFor: "Abogados, clínicas, consultorías y negocios basados en citas o servicios."
         },
         { 
           title: "Sincronización de Catálogo e Inventario", 
@@ -119,10 +120,11 @@ export const translations = {
       description: "Clear solutions, defined deliverables, ready to integrate into your operations.",
       items: [
         { 
-          title: "LiveClose AI – Auto Closing on WhatsApp", 
-          desc: "Smart sales bot that guides the customer, captures shipping data, reads bank transfer receipts, and sends the order to the dashboard.",
-          includes: "Direct WhatsApp QR connection, interactive catalog, OCR/AI receipt validation, and real-time dashboard.",
-          idealFor: "Instagram stores, TikTok Lives, and brands selling via chat."
+          title: "Wize Close AI – Auto Scheduling Assistant", 
+          price: "$14.990 CLP / month (Cyber Offer)",
+          desc: "Smart 24/7 WhatsApp assistant synced with Google Calendar to automatically schedule appointments and serve service-based clients.",
+          includes: "Direct WhatsApp QR connection, real-time calendar reading, available times validation, and management dashboard.",
+          idealFor: "Lawyers, clinics, consultants, and service/appointment-based businesses."
         },
         { 
           title: "Catalog and Inventory Sync", 
