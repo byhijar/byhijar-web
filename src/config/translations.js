@@ -57,7 +57,7 @@ export const translations = {
       ideal_for_label: "IDEAL PARA:",
       items: [
         { 
-          title: "Klous — Sistema de Agendamiento y Cierre Automático", 
+          title: "Sistema de Agendamiento y Cierre Automático", 
           price: "Desde $34.990 CLP / mes",
           desc: "Sistema integral de atención y ventas para WhatsApp e Instagram. Agenda citas en Google Calendar en tiempo real, responde consultas frecuentes y valida comprobantes de pago sin intervención manual.",
           includes: "Conexión directa a WhatsApp & Instagram, sincronización bidireccional con Google Calendar, lectura y validación de transferencias y panel de control.",
@@ -178,7 +178,7 @@ export const translations = {
       ideal_for_label: "IDEAL FOR:",
       items: [
         { 
-          title: "Klous — Automated Scheduling & Sales Closing System", 
+          title: "Automated Scheduling & Sales Closing System", 
           price: "From $39 USD / mo",
           desc: "End-to-end sales and booking system for WhatsApp and Instagram. Books appointments in Google Calendar in real time, answers inquiries 24/7, and verifies payment receipts automatically.",
           includes: "Direct WhatsApp & Instagram connection, real-time Google Calendar sync, automated transfer verification, and management dashboard.",
@@ -299,7 +299,7 @@ export const translations = {
       ideal_for_label: "IDEALE PER:",
       items: [
         { 
-          title: "Klous — Sistema di Prenotazione e Chiusura Automatica", 
+          title: "Sistema di Prenotazione e Chiusura Automatica", 
           price: "A partire da €49 / mese",
           desc: "Sistema completo di vendita e prenotazione per WhatsApp e Instagram. Fissa appuntamenti su Google Calendar in tempo reale, risponde alle domande frequenti e convalida i bonifici in automatico.",
           includes: "Connessione diretta WhatsApp & Instagram, sincronizzazione bidirezionale con Google Calendar, convalida automatica delle ricevute e dashboard di gestione.",

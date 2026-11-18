@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
-import { FaCalendarCheck, FaSync, FaCogs } from "react-icons/fa";
+import { FaSync, FaCogs } from "react-icons/fa";
 
 export default function Soluciones() {
   const { t } = useLanguage();
 
   const icons = [
-    <FaCalendarCheck key="calendar" className="text-3xl text-brand-red mb-5" />,
+    null, // Card 0 uses the official klous. brand wordmark
     <FaSync key="sync" className="text-3xl text-brand-red mb-5" />,
     <FaCogs key="cogs" className="text-3xl text-brand-red mb-5" />
   ];
@@ -46,24 +46,45 @@ export default function Soluciones() {
               key={index}
               className={`bg-white p-7 sm:p-8 border ${
                 index === 0
-                  ? "border-brand-red/30 shadow-md ring-1 ring-brand-red/10"
-                  : "border-gray-100 shadow-sm"
-              } flex flex-col justify-between transition-all duration-300 hover:shadow-lg rounded-sm`}
+                  ? "border-gray-200/90 hover:border-[#10B981]/40 shadow-sm hover:shadow-lg ring-1 ring-black/5"
+                  : "border-gray-100 shadow-sm hover:shadow-lg"
+              } flex flex-col justify-between transition-all duration-300 rounded-sm`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
               <div>
-                <div className="mb-1">{icons[index]}</div>
+                {/* Brand / Icon Area */}
+                <div className="mb-4">
+                  {index === 0 ? (
+                    <div className="bg-[#090D16] rounded-md px-3.5 py-1.5 inline-flex items-center shadow-sm">
+                      <span className="text-white font-extrabold tracking-[-0.04em] text-lg lowercase select-none">
+                        klous
+                      </span>
+                      <span className="inline-block w-2 h-2 bg-[#10B981] ml-0.5"></span>
+                    </div>
+                  ) : (
+                    <div className="mb-1">{icons[index]}</div>
+                  )}
+                </div>
+
                 <h3 className="text-xl sm:text-2xl font-bold text-editorial-primary mb-3 leading-snug">
                   {item.title}
                 </h3>
+
                 {item.price && (
-                  <div className="mb-4 inline-block bg-brand-red/10 text-brand-red text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider border border-brand-red/20 font-mono">
+                  <div
+                    className={`mb-4 inline-block text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider font-mono border ${
+                      index === 0
+                        ? "bg-[#10B981]/10 text-[#059669] border-[#10B981]/25"
+                        : "bg-brand-red/10 text-brand-red border-brand-red/20"
+                    }`}
+                  >
                     {item.price}
                   </div>
                 )}
+
                 <p className="text-editorial-body leading-relaxed text-sm sm:text-base mb-6">
                   {item.desc}
                 </p>
@@ -96,11 +117,12 @@ export default function Soluciones() {
                   onClick={(e) => handleCtaClick(e, item)}
                   className={`text-xs sm:text-sm font-bold uppercase tracking-widest inline-flex items-center gap-2 transition-colors ${
                     index === 0
-                      ? "text-brand-red hover:text-red-800"
+                      ? "text-[#059669] hover:text-[#047857]"
                       : "text-editorial-primary hover:text-brand-red"
                   }`}
                 >
-                  {item.cta_text} <span className="text-brand-red">→</span>
+                  {item.cta_text}{" "}
+                  <span className={index === 0 ? "text-[#10B981]" : "text-brand-red"}>→</span>
                 </a>
               </div>
             </motion.div>
