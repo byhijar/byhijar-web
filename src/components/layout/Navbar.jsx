@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes, FaGlobe } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import { useLanguage } from "../../context/LanguageContext";
+import { useLanguage, SUPPORTED_LANGUAGES } from "../../context/LanguageContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
+  const langMenuRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,15 +16,13 @@ export default function Navbar() {
       let current = "";
 
       // Check if we're at the bottom of the page
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 80) {
         setActiveSection("contacto");
         return;
       }
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        // Adjusted threshold for better accuracy
         if (window.scrollY >= sectionTop - 250) {
           current = section.getAttribute("id");
         }
@@ -35,8 +35,27 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile language menu on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (langMenuRef.current && !langMenuRef.current.contains(e.target)) {
+        setLangMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const scrollTo = (id) => {
-    const el = document.querySelector(id);
+    const aliasMap = {
+      '#problem': '#problema',
+      '#solutions': '#soluciones',
+      '#about': '#sobre-mi',
+      '#contact': '#contacto',
+      '#home': '#inicio'
+    };
+    const targetId = aliasMap[id] || id;
+    const el = document.querySelector(targetId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
       setOpen(false);
@@ -51,7 +70,7 @@ export default function Navbar() {
   ];
 
   const getPageTitle = (section) => {
-    const base = 'ByHijar — Automatización E-commerce';
+    const base = 'ByHijar — Sistemas & Agentes de IA';
     switch (section) {
       case 'problema': return `${t('nav.problem')} | ByHijar`;
       case 'soluciones': return `${t('nav.solutions')} | ByHijar`;
@@ -89,8 +108,9 @@ export default function Navbar() {
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className={`relative py-1 group transition-colors ${activeSection === link.sectionId ? "text-editorial-primary font-semibold" : "text-editorial-body hover:text-editorial-primary"
-                  }`}
+                className={`relative py-1 group transition-colors ${
+                  activeSection === link.sectionId ? "text-editorial-primary font-semibold" : "text-editorial-body hover:text-editorial-primary"
+                }`}
               >
                 {link.label}
                 <span
@@ -100,18 +120,65 @@ export default function Navbar() {
               </button>
             ))}
 
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-1 border border-gray-200 rounded-full hover:border-brand-red hover:text-brand-red transition-all duration-300 text-xs font-bold uppercase tracking-widest"
-            >
-              <FaGlobe /> {language === 'es' ? 'EN' : 'ES'}
-            </button>
+            {/* Desktop: Full Tri-language Selector (ES | EN | IT) */}
+            <div className="flex items-center gap-1 p-1 border border-gray-200 rounded-full text-xs font-mono font-bold">
+              <FaGlobe className="text-gray-400 ml-2 mr-1" />
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => setLanguage(lang.code)}
+                  className={`px-2.5 py-0.5 rounded-full transition-all duration-200 ${
+                    language === lang.code
+                      ? "bg-brand-red text-white shadow-sm"
+                      : "text-gray-500 hover:text-editorial-primary hover:bg-gray-100"
+                  }`}
+                  aria-label={`Cambiar idioma a ${lang.label}`}
+                >
+                  {lang.label}
+                </button>
+              ))}
+            </div>
           </nav>
 
-          {/* Mobile Actions */}
-          <div className="md:hidden flex items-center gap-4">
+          {/* Mobile Actions (< md): Compact dropdown (ES ▾) + Menu button */}
+          <div className="md:hidden flex items-center gap-3">
+            <div className="relative" ref={langMenuRef}>
+              <button
+                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                className="flex items-center gap-1.5 px-3 py-1 border border-gray-200 rounded-full text-xs font-mono font-bold text-editorial-primary bg-white/90 active:bg-gray-100 transition-all shadow-sm"
+                aria-label="Seleccionar idioma"
+                aria-expanded={langMenuOpen}
+              >
+                <FaGlobe className="text-gray-400 text-xs" />
+                <span className="uppercase text-brand-red">{language}</span>
+                <span className="text-[10px] text-gray-500">▾</span>
+              </button>
+
+              {langMenuOpen && (
+                <div className="absolute right-0 mt-2 py-1.5 w-28 bg-white border border-gray-200 rounded-xl shadow-xl z-50 font-mono text-xs overflow-hidden">
+                  {SUPPORTED_LANGUAGES.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setLangMenuOpen(false);
+                      }}
+                      className={`w-full text-left px-3.5 py-2 flex items-center justify-between transition-colors ${
+                        language === lang.code
+                          ? "bg-brand-red/10 text-brand-red font-bold"
+                          : "text-gray-600 hover:bg-gray-50"
+                      }`}
+                    >
+                      <span>{lang.label}</span>
+                      {language === lang.code && <span className="text-brand-red text-xs">✓</span>}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <button
-              className="text-xl text-editorial-primary focus:outline-none"
+              className="text-xl text-editorial-primary p-2 focus:outline-none"
               onClick={() => setOpen(!open)}
               aria-label="Toggle navigation menu"
             >
@@ -130,18 +197,13 @@ export default function Navbar() {
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className={`block w-full text-left font-medium text-lg py-2 border-b border-gray-50 last:border-0 ${activeSection === link.sectionId ? "text-brand-red" : "text-editorial-secondary"
-                  }`}
+                className={`block w-full text-left font-medium text-lg py-2 border-b border-gray-50 last:border-0 ${
+                  activeSection === link.sectionId ? "text-brand-red font-bold" : "text-editorial-secondary"
+                }`}
               >
                 {link.label}
               </button>
             ))}
-            <button
-              onClick={toggleLanguage}
-              className="w-full text-left font-bold text-sm py-4 text-editorial-secondary flex items-center gap-3 border-t border-gray-100"
-            >
-              <FaGlobe /> {language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
-            </button>
           </nav>
         )}
       </header>

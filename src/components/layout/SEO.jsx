@@ -1,48 +1,48 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export default function SEO() {
   return (
     <Helmet>
       <html lang="es" />
-      <title>ByHijar Web Solutions | Desarrollo web y branding con actitud</title>
+      <title>ByHijar — Sistemas & Agentes de IA para Vender y Agendar</title>
 
       <meta
         name="description"
-        content="Transforma tu presencia digital con sitios web modernos, branding visual potente y soluciones personalizadas. Desarrollado por José Hijar para marcas con actitud."
+        content="Sistemas y agentes de IA para vender y agendar en piloto automático por WhatsApp e Instagram. Creadores de Klous. Por José Híjar."
       />
       <meta
         name="keywords"
-        content="desarrollo web en Chile, diseño web moderno, branding digital, sitios web personalizados, soluciones para emprendedores, José Hijar, páginas web para negocios"
+        content="agentes de IA, automatización WhatsApp, Klous, agendamiento automático, ventas por chat, chatbots inteligentes Chile, José Híjar, ByHijar"
       />
-      <meta name="author" content="José Hijar" />
+      <meta name="author" content="José Híjar" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="es_CL" />
-      <meta property="og:url" content="https://byhijar.netlify.app/" />
+      <meta property="og:url" content="https://byhijar.cl" />
       <meta
         property="og:title"
-        content="ByHijar Web Solutions | Desarrollo web y branding con actitud"
+        content="ByHijar — Sistemas y Agentes de IA para Ventas y Agendamiento"
       />
       <meta
         property="og:description"
-        content="Impulsa tu marca con un sitio web funcional, atractivo y con personalidad. Hablemos hoy."
+        content="Elimina el trabajo manual de tu operación diaria. Automatiza la atención, validación de pagos y agendamiento 24/7 con Klous."
       />
-      <meta property="og:image" content="https://byhijar.netlify.app/logo.png" />
+      <meta property="og:image" content="https://byhijar.cl/logos/logo-rojo.png" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@byhijar" />
-      <meta name="twitter:url" content="https://byhijar.netlify.app/" />
+      <meta name="twitter:url" content="https://byhijar.cl" />
       <meta
         name="twitter:title"
-        content="ByHijar Web Solutions | Desarrollo web y branding con actitud"
+        content="ByHijar — Sistemas y Agentes de IA para Ventas y Agendamiento"
       />
       <meta
         name="twitter:description"
-        content="Desarrollo web, branding visual y soluciones digitales a tu medida. Sitios web que conectan."
+        content="Elimina el trabajo manual de tu operación diaria. Automatiza WhatsApp e Instagram con Klous."
       />
-      <meta name="twitter:image" content="https://byhijar.netlify.app/logo.png" />
+      <meta name="twitter:image" content="https://byhijar.cl/logos/logo-rojo.png" />
     </Helmet>
   );
 }

@@ -1,50 +1,75 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
-import { FaPatreon, FaDiscord, FaStripe, FaRegComments } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaCalendarAlt } from "react-icons/fa";
 
 export default function Problema() {
   const { t } = useLanguage();
 
-  const icons = [<FaPatreon />, <FaDiscord />, <FaStripe />, <FaRegComments />];
+  const getChannelIcon = (channel) => {
+    switch (channel?.toLowerCase()) {
+      case "whatsapp":
+        return <FaWhatsapp className="text-[#25D366] text-base" />;
+      case "instagram":
+        return <FaInstagram className="text-[#E1306C] text-base" />;
+      default:
+        return <FaCalendarAlt className="text-brand-red text-sm" />;
+    }
+  };
+
+  const getStatusBadge = (status, variant) => {
+    if (variant === "danger") {
+      return (
+        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-50 text-brand-red border border-red-200">
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse"></span>
+          {status}
+        </span>
+      );
+    }
+    return (
+      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+        <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+        {status}
+      </span>
+    );
+  };
 
   return (
-    <section id="problema" className="bg-white py-20 md:py-32 px-6 md:px-12 border-b border-gray-100">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        
+    <div className="bg-white py-20 md:py-28 px-6 md:px-12 border-b border-gray-100">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Left: Text */}
-        <div className="space-y-8">
-          <div className="font-mono text-sm tracking-widest uppercase flex items-center gap-3">
-            <span className="text-editorial-meta">01</span>
+        <div className="space-y-6">
+          <div className="font-mono text-xs md:text-sm tracking-widest uppercase flex items-center gap-3">
+            <span className="text-editorial-meta font-bold">01</span>
             <span className="text-brand-red w-4 h-[1px] bg-brand-red inline-block"></span>
-            <span className="text-editorial-secondary font-semibold">{t('problem.section_label')}</span>
+            <span className="text-editorial-secondary font-semibold">{t("problem.section_label")}</span>
           </div>
-          
-          <motion.h2 
-            className="text-4xl md:text-6xl font-bold tracking-tighter text-editorial-primary leading-[1.1]"
+
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-editorial-primary leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            {t('problem.title')}
+            {t("problem.title")}
           </motion.h2>
-          
-          <p className="text-xl text-editorial-body font-medium leading-relaxed">
-            {t('problem.description')}
+
+          <p className="text-base sm:text-lg text-editorial-body font-medium leading-relaxed">
+            {t("problem.description")}
           </p>
-          
-          <ul className="space-y-4 pt-4">
-            {t('problem.items').map((item, index) => {
-              const [strongPart, restPart] = item.split(': ');
+
+          <ul className="space-y-4 pt-2">
+            {t("problem.items").map((item, index) => {
+              const [strongPart, restPart] = item.split(": ");
               return (
-                <motion.li 
+                <motion.li
                   key={index}
-                  className="flex items-start gap-4 text-editorial-secondary text-lg"
+                  className="flex items-start gap-3.5 text-editorial-secondary text-base sm:text-lg"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <span className="text-brand-red mt-1 flex-shrink-0">✖</span>
+                  <span className="text-brand-red mt-1 flex-shrink-0 font-bold">✕</span>
                   <span>
                     <strong>{strongPart}:</strong> {restPart}
                   </span>
@@ -54,46 +79,53 @@ export default function Problema() {
           </ul>
         </div>
 
-        {/* Right: Visual Concept */}
+        {/* Right: Clean Stacked Notification Cards UI */}
         <div className="relative">
-          <motion.div 
-            className="bg-gray-50 border border-gray-200 p-8 rounded-2xl shadow-xl relative z-10"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex gap-4 mb-6">
-              <div className="w-3 h-3 rounded-full bg-red-400"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-              <div className="w-3 h-3 rounded-full bg-green-400"></div>
+          {/* Subtle container with brutalist border */}
+          <div className="space-y-4 relative z-10">
+            {/* Header pill */}
+            <div className="flex items-center justify-between pb-2">
+              <span className="text-xs font-mono font-bold tracking-wider uppercase text-editorial-meta flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
+                {t("problem.error_overlay")}
+              </span>
+              <span className="text-xs font-mono text-gray-400">bandeja en vivo</span>
             </div>
-            
-            <div className="space-y-4">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-12 bg-white border border-gray-100 flex items-center px-4 gap-4 opacity-50 blur-[1px]">
-                  <div className="w-6 h-6 bg-gray-200 rounded flex items-center justify-center text-gray-400 text-xs">
-                    {icons[i] || <FaRegFileExcel />}
+
+            {/* Notification Cards */}
+            {t("problem.cards")?.map((card, idx) => (
+              <motion.div
+                key={idx}
+                className="bg-white border border-gray-200/90 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 * idx, duration: 0.5 }}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-7 h-7 rounded-lg bg-gray-50 flex items-center justify-center border border-gray-100">
+                      {getChannelIcon(card.channel)}
+                    </span>
+                    <span className="text-xs font-bold text-editorial-primary font-mono">
+                      {card.channel}
+                    </span>
+                    <span className="text-[11px] text-gray-400 font-mono">· {card.time}</span>
                   </div>
-                  <div className="h-2 bg-gray-200 rounded w-1/3"></div>
-                  <div className="h-2 bg-gray-100 rounded w-1/4"></div>
-                  <div className="h-2 bg-red-100 rounded w-1/5 ml-auto"></div>
+                  {getStatusBadge(card.status, card.variant)}
                 </div>
-              ))}
-            </div>
 
-            {/* Error Overlay */}
-            <div className="absolute inset-0 bg-brand-red/5 flex items-center justify-center backdrop-blur-[1px] rounded-2xl border border-brand-red/20">
-              <div className="bg-white px-6 py-3 shadow-lg border-l-4 border-brand-red text-editorial-primary font-bold text-sm uppercase tracking-wider flex items-center gap-3">
-                <span className="text-brand-red animate-pulse">●</span> {t('problem.error_overlay')}
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Decorative background shape */}
-          <div className="absolute -top-10 -right-10 w-64 h-64 bg-gray-100 rounded-full blur-3xl -z-10"></div>
+                <p className="text-sm sm:text-base text-editorial-secondary font-medium pl-9 leading-snug">
+                  {card.message}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Decorative subtle background grid */}
+          <div className="absolute -top-6 -right-6 w-full h-full border border-gray-100 -z-10 rounded-2xl hidden sm:block"></div>
         </div>
-
       </div>
-    </section>
+    </div>
   );
 }

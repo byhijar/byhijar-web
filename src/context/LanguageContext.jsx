@@ -3,42 +3,62 @@ import { translations } from '../config/translations';
 
 const LanguageContext = createContext();
 
+export const SUPPORTED_LANGUAGES = [
+  { code: 'es', label: 'ES' },
+  { code: 'en', label: 'EN' },
+  { code: 'it', label: 'IT' },
+];
+
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('es');
+  const [language, setLanguageState] = useState('es');
 
   useEffect(() => {
     const savedLang = localStorage.getItem('language');
-    if (savedLang) {
-      setLanguage(savedLang);
+    if (savedLang && (savedLang === 'es' || savedLang === 'en' || savedLang === 'it')) {
+      setLanguageState(savedLang);
     } else {
-      const browserLang = navigator.language.split('-')[0];
-      if (browserLang === 'en' || browserLang === 'es') {
-        setLanguage(browserLang);
-      }
+      // Default strictly to 'es' as primary
+      setLanguageState('es');
     }
   }, []);
 
+  const setLanguage = (newLang) => {
+    if (newLang === 'es' || newLang === 'en' || newLang === 'it') {
+      setLanguageState(newLang);
+      localStorage.setItem('language', newLang);
+    }
+  };
+
   const toggleLanguage = () => {
-    const newLang = language === 'es' ? 'en' : 'es';
-    setLanguage(newLang);
-    localStorage.setItem('language', newLang);
+    const codes = ['es', 'en', 'it'];
+    const nextIdx = (codes.indexOf(language) + 1) % codes.length;
+    setLanguage(codes[nextIdx]);
   };
 
   const t = (path) => {
     const keys = path.split('.');
-    let result = translations[language];
+    let current = translations[language];
     for (const key of keys) {
-      if (result[key]) {
-        result = result[key];
+      if (current && current[key] !== undefined) {
+        current = current[key];
       } else {
-        return path;
+        // Fallback to Spanish if key is not found in selected language
+        let fallback = translations.es;
+        for (const k of keys) {
+          if (fallback && fallback[k] !== undefined) {
+            fallback = fallback[k];
+          } else {
+            return path;
+          }
+        }
+        return fallback;
       }
     }
-    return result;
+    return current;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
