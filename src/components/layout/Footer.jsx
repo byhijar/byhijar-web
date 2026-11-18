@@ -9,7 +9,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:grid md:grid-cols-3 justify-between items-start md:items-center gap-8 md:gap-0">
         {/* Left: Identity */}
         <div className="space-y-1">
-          <h3 className="font-mono text-gray-900 font-semibold text-lg">byhijar_</h3>
+          <h3 className="font-mono text-gray-900 font-semibold text-lg flex items-center">
+            byhijar<span className="text-brand-red animate-cursor font-bold">_</span>
+          </h3>
           <p className="text-sm font-medium text-gray-600">{t("footer.builder")}</p>
           <p className="text-xs text-gray-400">{t("footer.location")}</p>
         </div>

@@ -26,7 +26,21 @@
   }
 }
 
+@keyframes cursor-blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
 @layer utilities {
+  .animate-cursor {
+    display: inline-block;
+    animation: cursor-blink 1s infinite;
+  }
+
   @media (hover: hover) and (pointer: fine) {
     .desktop-hover-grayscale {
       filter: grayscale(100%);

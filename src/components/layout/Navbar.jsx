@@ -95,7 +95,7 @@ export default function Navbar() {
             onClick={() => scrollTo("#inicio")}
           >
             <span className="text-lg font-semibold tracking-tight text-editorial-primary font-mono transition-colors">
-              byhijar<span className="text-gray-300 transition-colors duration-300 group-hover:text-brand-red">_</span>
+              byhijar<span className="text-brand-red animate-cursor font-bold">_</span>
             </span>
           </div>
 

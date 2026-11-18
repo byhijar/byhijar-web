@@ -15,6 +15,15 @@ export default {
           bg: 'var(--bg-primary)',
           band: 'var(--bg-secondary)',
         }
+      },
+      keyframes: {
+        cursorBlink: {
+          '0%, 49%': { opacity: '1' },
+          '50%, 100%': { opacity: '0' },
+        }
+      },
+      animation: {
+        cursor: 'cursorBlink 1s infinite',
       }
     },
   },
